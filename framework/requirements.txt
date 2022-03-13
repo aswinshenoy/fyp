@@ -1,0 +1,7 @@
+django==4.0.3
+environs==9.3.0
+psycopg2==2.8.6
+strawberry-graphql==0.93.8
+PyJWT==2.0.1
+pycryptodome==3.10.1
+requests==2.25.1
