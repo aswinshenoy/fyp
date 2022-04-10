@@ -2,6 +2,7 @@ from datetime import date
 from typing import List
 
 import strawberry
+from django.db.models import Q
 
 
 @strawberry.type
@@ -73,6 +74,72 @@ class LocationMetricAverages:
     alkalinity: float
     turbidity: float
     wqi: WQIType
+    ecoil: float
+    coliform: float
+
+
+@strawberry.type
+class ContaminationTypeStat:
+    value: int
+    percent: float
+
+
+@strawberry.type
+class ContaminationStat:
+
+    @strawberry.field
+    def physical(self) -> ContaminationTypeStat:
+        from sample.models import TestSample
+        count = TestSample.objects.filter(
+            Q(location=self['location']) &
+            Q(
+                Q(tds__gt=200) |
+                Q(ph__lt=6.5) |
+                Q(ph__gt=8.5) |
+                Q(hardness__gt=200) |
+                Q(alkalinity__gt=200)
+            )
+        ).count()
+        return ContaminationTypeStat(
+            value=count,
+            percent=(count/self['total'])*100
+        )
+
+    @strawberry.field
+    def chemical(self) -> ContaminationTypeStat:
+        from sample.models import TestSample
+        count = TestSample.objects.filter(
+            Q(location=self['location']) &
+            Q(
+                Q(chloride__gt=250) |
+                Q(copper__gt=0.05) |
+                Q(fluoride__gt=1) |
+                Q(manganese__gt=0.1) |
+                Q(iron__gt=0.3) |
+                Q(nitrate__gt=45) |
+                Q(sulphate__gt=200) |
+                Q(arsenic__gt=0.01)
+            )
+        ).count()
+        return ContaminationTypeStat(
+            value=count,
+            percent=(count / self['total'])*100
+        )
+
+    @strawberry.field
+    def biological(self) -> ContaminationTypeStat:
+        from sample.models import TestSample
+        count = TestSample.objects.filter(
+            Q(location=self['location']) &
+            Q(
+                Q(ecoil__gt=100) |
+                Q(coliform__gt=100)
+            )
+        ).count()
+        return ContaminationTypeStat(
+            value=count,
+            percent=(count / self['total'])*100
+        )
 
 
 @strawberry.type
@@ -81,12 +148,21 @@ class LocationTestStat:
     firstRecorded: date
     lastRecorded: date
 
+    @strawberry.field
     def yearlySamples(self) -> List[YearlyValueType]:
         return self.trends['yearlySamples']
 
 
 @strawberry.type
 class LocationType(BasicLocationType):
+
+    @strawberry.field
+    def contamination(self) -> ContaminationStat:
+        from sample.models import TestSample
+        return {
+            'location': self,
+            'total': TestSample.objects.filter(location=self).count()
+        }
 
     @strawberry.field
     def test_stats(self, info) -> LocationTestStat:
@@ -98,7 +174,44 @@ class LocationType(BasicLocationType):
 
     @strawberry.field
     def avgMetrics(self, info) -> LocationMetricAverages:
-        return self  # type: ignore
+        from django.db.models import Avg
+        from sample.models import TestSample
+        r = TestSample.objects.filter(location=self).aggregate(
+            manganese=Avg("manganese"),
+            iron=Avg("iron"),
+            nitrate=Avg("nitrate"),
+            arsenic=Avg("arsenic"),
+            fluoride=Avg("fluoride"),
+            chloride=Avg("chloride"),
+            sulphate=Avg("sulphate"),
+            copper=Avg("copper"),
+            tds=Avg("tds"),
+            ph=Avg("ph"),
+            turbidity=Avg("turbidity"),
+            alkalinity=Avg("alkalinity"),
+            hardness=Avg("hardness"),
+            ecoil=Avg("ecoil"),
+            coliform=Avg("coliform"),
+            wqi=Avg("wqi"),
+        )
+        return LocationMetricAverages(
+            manganese=r['manganese'],
+            iron=r['iron'],
+            nitrate=r['nitrate'],
+            arsenic=r['arsenic'],
+            fluoride=r['fluoride'],
+            chloride=r['chloride'],
+            sulphate=r['sulphate'],
+            copper=r['copper'],
+            tds=r['tds'],
+            ph=r['ph'],
+            turbidity=r['turbidity'],
+            alkalinity=r['alkalinity'],
+            hardness=r['hardness'],
+            ecoil=r['ecoil'],
+            coliform=r['coliform'],
+            wqi=r['wqi']
+        )
 
 
 @strawberry.type

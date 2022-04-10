@@ -104,6 +104,7 @@ class TestSample(models.Model):
     )
     source = models.CharField(max_length=25, default='UNKNOWN')
     date = models.DateField(null=True, blank=True)
+
     manganese = models.FloatField(default=0)
     iron = models.FloatField(default=0)
     nitrate = models.FloatField(default=0)
@@ -123,6 +124,43 @@ class TestSample(models.Model):
     ecoil = models.FloatField(default=0)
 
     wqi = models.FloatField(default=0)
+
+    isPhyContaminated = models.BooleanField(default=False)
+    isCheContaminated = models.BooleanField(default=False)
+    isBioContaminated = models.BooleanField(default=False)
+
+    def cal_phy_contamination(self):
+        if self.tds and self.tds > 200:
+            return True
+        if self.ph and self.ph < 6.5 or self.ph > 8.5:
+            return True
+        if self.hardness and self.hardness > 200:
+            return True
+        if self.alkalinity and self.alkalinity > 200:
+            return True
+        return False
+
+    def cal_che_contamination(self):
+        if self.chloride and self.chloride > 250:
+            return True
+        if self.copper and self.copper > 0.05:
+            return True
+        if self.fluoride and self.fluoride > 1:
+            return True
+        if self.iron and self.iron > 0.3:
+            return True
+        if self.nitrate and self.nitrate > 45:
+            return True
+        if self.sulphate and self.arsenic > 0.01:
+            return True
+        return False
+
+    def cal_bio_contamination(self):
+        if self.ecoil and self.ecoil > 0:
+            return True
+        if self.coliform and self.coliform > 0:
+            return True
+        return False
 
     @property
     def WQI(self):
@@ -154,7 +192,7 @@ class TestSample(models.Model):
                 hardness +
                 alkalinity +
                 turbidity
-            ) / 12,
+            ),
             5
         )
 
@@ -194,9 +232,9 @@ class TestSample(models.Model):
         return str(self.id)
 
 
-@receiver(post_save, sender=TestSample)
-def signal_submission_post_save(sender, instance: TestSample, created, **kwargs):
-    instance.location.calc_metrics()
+# @receiver(post_save, sender=TestSample)
+# def signal_submission_post_save(sender, instance: TestSample, created, **kwargs):
+#     instance.location.calc_metrics()
 
 
 __all__ = [

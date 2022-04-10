@@ -1,23 +1,30 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import APIFetch from "../../src/utils/APIFetch";
 import LocationPageView from "../../src/location/page";
+import AppView from "../../src/app";
 
 export async function getServerSideProps({ query }) {
-    return {
-        props: { id: query?.id }
-    }
-}
-
-const LocationPage = ({ id }) => {
-
-    const [location, setLocation] = useState();
-
-    const fetchData = () => {
-        APIFetch({
-            query: `query ($id: ID!) {
+    return APIFetch({
+        query: `query ($id: ID!) {
               location(id: $id) {
                 id
                 name
+                district
+                state
+                contamination {
+                  physical {
+                    value
+                    percent
+                  }
+                  chemical {
+                    value
+                    percent
+                  }
+                  biological {
+                    value
+                    percent
+                  }
+                }
                 avgMetrics {
                   manganese
                   iron
@@ -32,6 +39,8 @@ const LocationPage = ({ id }) => {
                   hardness
                   alkalinity
                   turbidity
+                  ecoil
+                  coliform
                   wqi {
                     value
                     group
@@ -46,18 +55,28 @@ const LocationPage = ({ id }) => {
                 }
               }
             }`,
-            variables: { id }
-        }).then(({ success, data, response }) => {
-            if(success && data?.location) {
-                setLocation(data.location)
+        variables: { id: query?.id }
+    }).then(({ success, data, response }) => {
+        if(success && data?.location) {
+            return {
+                props: {
+                    location: data.location
+                }
             }
-        })
-    };
+        } else {
+            return {
+                props: {
+                    notFound: true
+                }
+            }
+        }
+    })
+}
 
-    useEffect(fetchData, []);
-
-    return location ? <LocationPageView location={location} /> : <div>Loading</div>;
-
-};
+const LocationPage = ({ location }) => (
+    <AppView>
+        <LocationPageView location={location} />
+    </AppView>
+);
 
 export default LocationPage;

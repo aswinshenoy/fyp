@@ -10,4 +10,6 @@ class LocationAdmin(admin.ModelAdmin):
 
 @admin.register(TestSample)
 class TestSampleAdmin(admin.ModelAdmin):
-    list_display = ['id', 'location', 'wqi']
+    search_fields = ['location__name',]
+    list_display = ['id', 'location', 'wqi', 'isPhyContaminated', 'isCheContaminated', 'isBioContaminated']
+    list_filter = ['isPhyContaminated', 'isCheContaminated', 'isBioContaminated']
