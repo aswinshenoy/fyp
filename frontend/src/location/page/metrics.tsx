@@ -1,5 +1,6 @@
 import React from 'react';
 import MetricCard from "./MetricCard";
+import {TabSwitcher} from "@traboda/dsr";
 
 const MetricView = ({ location }) => {
 
@@ -106,19 +107,71 @@ const MetricView = ({ location }) => {
     ]
 
     return (
-        <React.Fragment>
+        <div className="w-full">
             <div className="p-2">
                 <h3 className="text-xl font-semibold opacity-80">Parameter Values (Avg)</h3>
             </div>
-            <div className="flex text-center w-full flex-wrap">
-                {metrics.map((m) => (
-                    <div key={m.label} className="xl:w-1/5 lg:w-1/4 md:w-1/3 sm:w-1/2 w-full p-2">
-                        {/*// @ts-ignore*/}
-                        <MetricCard {...m} />
-                    </div>
-                ))}
-            </div>
-        </React.Fragment>
+            <TabSwitcher
+                items={[
+                    {
+                        key: 'AllParameters',
+                        label: 'All Parameters',
+                        rendererFunc: () => (
+                            <div className="flex flex-wrap w-full">
+                                {metrics.map((m, index) => (
+                                    <div key={m.label} className="xl:w-1/5 lg:w-1/4 md:w-1/3 sm:w-1/2 w-full p-2">
+                                        {/*// @ts-ignore*/}
+                                        <MetricCard key={m.label} {...m} />
+                                    </div>
+                                ))}
+                            </div>
+                        )
+                    },
+                    {
+                        key: 'ChemicalProperties',
+                        label: 'Chemical',
+                        rendererFunc: () => (
+                            <div className="flex flex-wrap w-full">
+                                {metrics.filter(m => m.chemical).map(m => (
+                                    <div key={m.label} className="xl:w-1/5 lg:w-1/4 md:w-1/3 sm:w-1/2 w-full p-2">
+                                        {/*// @ts-ignore*/}
+                                        <MetricCard key={m.label} {...m} />
+                                    </div>
+                                ))}
+                            </div>
+                        )
+                    },
+                    {
+                        key: 'PhysicalProperties',
+                        label: 'Physical',
+                        rendererFunc: () => (
+                            <div className="flex flex-wrap w-full">
+                                {metrics.filter(m => m.physical).map(m => (
+                                    <div key={m.label} className="xl:w-1/5 lg:w-1/4 md:w-1/3 sm:w-1/2 w-full p-2">
+                                        {/*// @ts-ignore*/}
+                                        <MetricCard key={m.label} {...m} />
+                                    </div>
+                                ))}
+                            </div>
+                        )
+                    },
+                    {
+                        key: 'BiologicalProperties',
+                        label: 'Biological',
+                        rendererFunc: () => (
+                            <div className="flex flex-wrap w-full">
+                                {metrics.filter(m => m.biological).map(m => (
+                                    <div key={m.label} className="xl:w-1/5 lg:w-1/4 md:w-1/3 sm:w-1/2 w-full p-2">
+                                        {/*// @ts-ignore*/}
+                                        <MetricCard key={m.label} {...m} />
+                                    </div>
+                                ))}
+                            </div>
+                        )
+                    }
+                ]}
+            />
+        </div>
     )
 };
 

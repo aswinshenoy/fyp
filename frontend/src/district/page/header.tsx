@@ -2,22 +2,18 @@ import React from 'react';
 import {Breadcrumb} from "@traboda/dsr";
 
 
-const LocationPageHeader = ({ location }) => (
+const DistrictPageHeader = ({ district }) => (
     <React.Fragment>
         <div className="mb-2">
             <Breadcrumb
                 items={[
                     {
-                        link: `/state/${location?.state.toLowerCase()}`,
-                        title: location?.state.toLowerCase()
+                        link: `/state/${district?.state}`,
+                        title: district?.state
                     },
                     {
-                        link: `/district/${location?.district.toLowerCase()}`,
-                        title: location?.district.toLowerCase()
-                    },
-                    {
-                        link: `/location/${location?.id}`,
-                        title: location?.name,
+                        link: `/district/${district?.name}`,
+                        title: district?.name,
                         isActive: true
                     }
                 ]}
@@ -27,15 +23,15 @@ const LocationPageHeader = ({ location }) => (
             <div className="flex flex-wrap">
                 <div className="w-2/3 flex items-center px-1">
                     <div>
-                        <h1 className="text-6xl font-semibold">{location?.name}</h1>
+                        <h1 className="text-6xl font-semibold">{district?.name}</h1>
                     </div>
                 </div>
                 <div className="w-1/3 p-1 justify-end text-right flex">
                     <div>
                         <div>
                             <div className="text-lg font-semibold">Water Quality Index (WQI)</div>
-                            <div className="text-6xl font-bold">{Math.round(location?.avgMetrics?.wqi?.value)}/900</div>
-                            <div>{location?.avgMetrics?.wqi?.group}</div>
+                            <div className="text-6xl font-bold">{Math.round(district?.avgMetrics?.wqi?.value)}/900</div>
+                            <div>{district?.avgMetrics?.wqi?.group}</div>
                         </div>
                     </div>
                 </div>
@@ -44,4 +40,4 @@ const LocationPageHeader = ({ location }) => (
     </React.Fragment>
 );
 
-export default LocationPageHeader;
+export default DistrictPageHeader;

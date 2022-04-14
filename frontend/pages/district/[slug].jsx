@@ -1,29 +1,21 @@
 import React from "react";
 import APIFetch from "../../src/utils/APIFetch";
-import LocationPageView from "../../src/location/page";
 import AppView from "../../src/app";
+import DistrictPageView from "../../src/district/page";
 
 export async function getServerSideProps({ query }) {
     return APIFetch({
-        query: `query ($id: ID!) {
-              location(id: $id) {
-                id
+        query: `query ($slug: String!) {
+              district(slug: $slug) {
                 name
-                district
                 state
-                contamination {
-                  physical {
-                    value
-                    percent
-                  }
-                  chemical {
-                    value
-                    percent
-                  }
-                  biological {
-                    value
-                    percent
-                  }
+                locations{
+                    id
+                    name
+                    wqi{
+                      group
+                      value
+                    }
                 }
                 avgMetrics {
                   manganese
@@ -48,12 +40,12 @@ export async function getServerSideProps({ query }) {
                 }
               }
             }`,
-        variables: { id: query?.id }
+        variables: { slug: query?.slug }
     }).then(({ success, data, response }) => {
-        if(success && data?.location) {
+        if(success && data?.district) {
             return {
                 props: {
-                    location: data.location
+                    district: data.district
                 }
             }
         } else {
@@ -66,10 +58,10 @@ export async function getServerSideProps({ query }) {
     })
 }
 
-const LocationPage = ({ location }) => (
-    <AppView meta={{ title: location?.name }}>
-        <LocationPageView location={location} />
+const DistrictPage = ({ district }) => (
+    <AppView meta={{ title: district?.name }}>
+        <DistrictPageView district={district} />
     </AppView>
 );
 
-export default LocationPage;
+export default DistrictPage;

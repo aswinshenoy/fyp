@@ -1,7 +1,11 @@
-export default function Home() {
-  return (
-    <div>
-      <h1>Final Year Project</h1>
-    </div>
-  )
-}
+import React from "react";
+import LandingPageView from "../src/landing";
+import AppView from "../src/app";
+
+const Home = () => (
+    <AppView meta={{ title: 'Dashboard - WQI App' }}>
+      <LandingPageView />
+    </AppView>
+);
+
+export default Home;

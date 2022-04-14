@@ -4,7 +4,6 @@ from typing import Optional
 import strawberry
 from django.db import transaction
 
-from framework.graphql.types import JSONScalar
 from sample.models import TestSample, Location
 
 
@@ -73,9 +72,6 @@ class SampleManagementMutations:
             sample.set_wqi()
             samples.append(sample)
         TestSample.objects.bulk_create(samples)
-        locations = Location.objects.all()
-        for l in locations:
-            l.calc_metrics()
         return True
 
 

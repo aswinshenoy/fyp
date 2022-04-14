@@ -1,8 +1,8 @@
 from datetime import date
-from typing import List
+from typing import List, Optional
 
 import strawberry
-from django.db.models import Q
+from django.db.models import Q, Avg
 
 
 @strawberry.type
@@ -26,12 +26,91 @@ class WQIType:
 
 
 @strawberry.type
+class LocationMetricAverages:
+    manganese: float
+    iron: float
+    nitrate: float
+    arsenic: float
+    fluoride: float
+    chloride: float
+    sulphate: float
+    copper: float
+    tds: float
+    ph: float
+    hardness: float
+    alkalinity: float
+    turbidity: float
+    wqi: WQIType
+    ecoil: float
+    coliform: float
+
+
+@strawberry.type
 class BasicLocationType:
     id: strawberry.ID
     name: str
     district: str
     state: str
-    wqi: WQIType
+
+    @strawberry.field
+    def wqi(self, info) -> WQIType:
+        from sample.models import TestSample
+        return TestSample.objects.filter(location=self).aggregate(wqi=Avg("wqi"))['wqi']
+
+
+@strawberry.type
+class DistrictType:
+    name: str
+    state: str
+
+    @strawberry.field
+    def locations(self, info, keyword: Optional[str] = None) -> List[BasicLocationType]:
+        from sample.models import Location
+        qs = Location.objects.filter(district__iexact=self.name)
+        if keyword:
+            qs = qs.filter(name__istartswith=keyword)
+        return qs  # type: ignore
+
+    @strawberry.field
+    def avgMetrics(self, info) -> LocationMetricAverages:
+        from django.db.models import Avg
+        from sample.models import TestSample
+        r = TestSample.objects.filter(location__district__iexact=self.name).aggregate(
+            manganese=Avg("manganese"),
+            iron=Avg("iron"),
+            nitrate=Avg("nitrate"),
+            arsenic=Avg("arsenic"),
+            fluoride=Avg("fluoride"),
+            chloride=Avg("chloride"),
+            sulphate=Avg("sulphate"),
+            copper=Avg("copper"),
+            tds=Avg("tds"),
+            ph=Avg("ph"),
+            turbidity=Avg("turbidity"),
+            alkalinity=Avg("alkalinity"),
+            hardness=Avg("hardness"),
+            ecoil=Avg("ecoil"),
+            coliform=Avg("coliform"),
+            wqi=Avg("wqi"),
+        )
+        return LocationMetricAverages(
+            manganese=r['manganese'],
+            iron=r['iron'],
+            nitrate=r['nitrate'],
+            arsenic=r['arsenic'],
+            fluoride=r['fluoride'],
+            chloride=r['chloride'],
+            sulphate=r['sulphate'],
+            copper=r['copper'],
+            tds=r['tds'],
+            ph=r['ph'],
+            turbidity=r['turbidity'],
+            alkalinity=r['alkalinity'],
+            hardness=r['hardness'],
+            ecoil=r['ecoil'],
+            coliform=r['coliform'],
+            wqi=r['wqi']
+        )
 
 
 @strawberry.type
@@ -56,26 +135,6 @@ class YearlyWQIType:
     @strawberry.field
     def year(self) -> int:
         return self['year']
-
-
-@strawberry.type
-class LocationMetricAverages:
-    manganese: float
-    iron: float
-    nitrate: float
-    arsenic: float
-    fluoride: float
-    chloride: float
-    sulphate: float
-    copper: float
-    tds: float
-    ph: float
-    hardness: float
-    alkalinity: float
-    turbidity: float
-    wqi: WQIType
-    ecoil: float
-    coliform: float
 
 
 @strawberry.type
@@ -170,7 +229,7 @@ class LocationType(BasicLocationType):
 
     @strawberry.field
     def yearly_wqi(self, info) -> List[YearlyWQIType]:
-        return self.trends['yearlyWQI']  # type: ignore
+        return []
 
     @strawberry.field
     def avgMetrics(self, info) -> LocationMetricAverages:
@@ -219,10 +278,21 @@ class LocationStat:
     rank: int
     location: BasicLocationType
     value: float
+    maxValue: float
+    minValue: float
+    samples: int
+
+
+@strawberry.type
+class Parameter:
+    name: str
+    locations: List[LocationStat]
 
 
 __all__ = [
+    'DistrictType',
     'BasicLocationType',
     'LocationType',
-    'LocationStat'
+    'LocationStat',
+    'Parameter'
 ]

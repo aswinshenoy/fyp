@@ -1,8 +1,4 @@
 from django.db import models
-from django.db.models import F, Count, Max, Min
-from django.db.models import Avg
-from django.db.models.signals import post_save
-from django.dispatch import receiver
 
 
 class Location(models.Model):
@@ -10,81 +6,6 @@ class Location(models.Model):
     name = models.CharField(max_length=100, default='')
     district = models.CharField(max_length=100, default='TVM')
     state = models.CharField(max_length=6, default='KL')
-
-    manganese = models.FloatField(default=0)
-    iron = models.FloatField(default=0)
-    nitrate = models.FloatField(default=0)
-    arsenic = models.FloatField(default=0)
-    fluoride = models.FloatField(default=0)
-    chloride = models.FloatField(default=0)
-    sulphate = models.FloatField(default=0)
-    copper = models.FloatField(default=0)
-
-    tds = models.FloatField(default=0)
-    ph = models.FloatField(default=0)
-    hardness = models.FloatField(default=0)
-    alkalinity = models.FloatField(default=0)
-    turbidity = models.FloatField(default=0)
-
-    coliform = models.FloatField(default=0)
-    ecoil = models.FloatField(default=0)
-
-    wqi = models.FloatField(default=0)
-    trends = models.JSONField(null=True)
-    totalSamples = models.IntegerField(default=0)
-    lastRecorded = models.DateTimeField(null=True)
-    firstRecorded = models.DateTimeField(null=True)
-
-    def calc_metrics(self):
-        results = TestSample.objects.filter(location=self).aggregate(
-            totalSamples=Count('id'),
-            lastRecorded=Max('date'),
-            firstRecorded=Min('date'),
-            manganese=Avg("manganese"),
-            iron=Avg("iron"),
-            nitrate=Avg("nitrate"),
-            arsenic=Avg("arsenic"),
-            fluoride=Avg("fluoride"),
-            chloride=Avg("chloride"),
-            sulphate=Avg("sulphate"),
-            copper=Avg("copper"),
-            tds=Avg("tds"),
-            ph=Avg("ph"),
-            turbidity=Avg("turbidity"),
-            alkalinity=Avg("alkalinity"),
-            hardness=Avg("hardness"),
-            wqi=Avg("wqi"),
-        )
-        self.totalSamples = results['totalSamples']
-        self.firstRecorded = results['firstRecorded']
-        self.lastRecorded = results['lastRecorded']
-        self.manganese = results['manganese']
-        self.iron = results['iron']
-        self.nitrate = results['nitrate']
-        self.arsenic = results['arsenic']
-        self.fluoride = results['fluoride']
-        self.chloride = results['chloride']
-        self.sulphate = results['sulphate']
-        self.copper = results['copper']
-        self.tds = results['tds']
-        self.ph = results['ph']
-        self.turbidity = results['turbidity']
-        self.alkalinity = results['alkalinity']
-        self.hardness = results['hardness']
-        self.wqi = results['wqi']
-
-        self.trends = {}
-
-        yearlyWQIqs = TestSample.objects.filter(location=self).values('date__year').annotate(
-            year=F('date__year'), wqi=Avg("wqi")
-        ).order_by('date__year').values('year', 'wqi')
-        self.trends['yearlyWQI'] = [{'year': s['year'], 'wqi': s['wqi']} for s in yearlyWQIqs]
-
-        yearlySampleQS = TestSample.objects.filter(location=self).values('date__year').annotate(
-            year=F('date__year'), count=Count("id")
-        ).order_by('date__year').values('year', 'count')
-        self.trends['yearlySamples'] = [{'year': s['year'], 'value': s['count']} for s in yearlySampleQS]
-        self.save()
 
     class Meta:
         db_table = 'location'
@@ -141,6 +62,10 @@ class TestSample(models.Model):
         return False
 
     def cal_che_contamination(self):
+        if self.manganese and self.manganese > 250:
+            return True
+        if self.sulphate and self.sulphate > 0.01:
+            return True
         if self.chloride and self.chloride > 250:
             return True
         if self.copper and self.copper > 0.05:
