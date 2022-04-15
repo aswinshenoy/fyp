@@ -71,7 +71,7 @@ export async function getServerSideProps({ query }) {
 
 const LocationPage = ({ location }) => (
     <AppView meta={{ title: `${location?.name} - Panchayath Water Statistics` }}>
-        <LocationPageView location={location} />
+        {location ? <LocationPageView location={location} /> : <div>Not Found</div>}
     </AppView>
 );
 

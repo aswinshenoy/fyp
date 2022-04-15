@@ -1,102 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import {Card} from "@traboda/dsr";
+import APIFetch from "../utils/APIFetch";
 
 const ParameterList = () => {
 
+    const [parameters, setParameters] = useState([]);
 
-    const metrics = [
-        {
-            label: 'WQI',
-            id: 'wqi'
-        },
-        {
-            label: 'Chloride',
-            chemical: true,
-            id: 'chloride'
-        },
-        {
-            label: 'Copper',
-            chemical: true,
-            id: 'copper'
-        },
-        {
-            label: 'Fluoride',
-            chemical: true,
-            id: 'fluroide'
-        },
-        {
-            label: 'Iron',
-            chemical: true,
-            id: 'iron'
-        },
-        {
-            label: 'Manganese',
-            chemical: true,
-            id: 'manganese'
-        },
-        {
-            label: 'Nitrate',
-            chemical: true,
-            id: 'nitrate'
-        },
-        {
-            label: 'Sulphate',
-            chemical: true,
-            id: 'sulphate'
-        },
-        {
-            label: 'Arsenic',
-            chemical: true,
-            id: 'arsenic'
-        },
-        {
-            label: 'Alkalinity',
-            physical: true,
-            id: 'alkalinity'
-        },
-        {
-            label: 'Hardness',
-            physical: true,
-            id: 'hardness'
-        },
-        {
-            label: 'Turbidity',
-            physical: true,
-            id: 'turbidity'
-        },
-        {
-            label: 'pH',
-            physical: true,
-            id: 'ph'
-        },
-        {
-            label: 'TDS',
-            physical: true,
-            id: 'tds'
-        },
-        {
-            label: 'E.Coli',
-            biological: true,
-            id: 'ecoli'
-        },
-        {
-            label: 'Coliform',
-            biological: true,
-            id: 'coliform'
-        }
-    ]
+    const fetchParameter = () => {
+        APIFetch({
+            query: `{
+              parameters{
+                id
+                name
+                slug
+                group{
+                  name
+                  slug
+                }
+              }
+            }`,
+        }).then(({ success, data }) => {
+            if (success && data?.parameters) {
+                setParameters(data.parameters);
+            }
+        });
+    };
+
+    useEffect(fetchParameter, []);
 
     return (
         <div>
             <div className="flex flex-wrap p-2">
-                {metrics.map((m) => (
+                {parameters.map((m) => (
                     <div className="w-1/2 p-2">
-                        <Link href={`/parameter/${m?.id}`}>
+                        <Link href={`/parameter/${m?.slug}`}>
                             <a>
-                                <Card className="p-4">
+                                <Card className="bg-white p-4">
                                     <div className="text-2xl font-semibold">
-                                        {m?.label}
+                                        {m?.name}
+                                    </div>
+                                    <div>
+                                        {m?.group?.name}
                                     </div>
                                 </Card>
                             </a>

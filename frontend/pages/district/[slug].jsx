@@ -59,7 +59,7 @@ export async function getServerSideProps({ query }) {
 
 const DistrictPage = ({ district }) => (
     <AppView meta={{ title: `${district?.name} - District Water Statistics` }}>
-        <DistrictPageView district={district} />
+        {district ? <DistrictPageView district={district} /> : <div>Not Found</div>}
     </AppView>
 );
 

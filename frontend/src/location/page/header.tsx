@@ -8,6 +8,10 @@ const LocationPageHeader = ({ location }) => (
             <Breadcrumb
                 items={[
                     {
+                        link: '/locations',
+                        title: 'Locations'
+                    },
+                    {
                         link: `/state/${location?.state.slug}`,
                         title: location?.state.name
                     },

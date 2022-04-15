@@ -1,26 +1,27 @@
 import React from "react";
 import APIFetch from "../src/utils/APIFetch";
-import LocationsListingView from "../src/location/listing";
 import AppView from "../src/app";
+import ParametersListingView from "../src/parameter/listing";
 
 
 export async function getServerSideProps({ query }) {
     return APIFetch({
         query: `{
-          locations{
+          parameters{
             id
             name
-            wqi{
-              group
-              value
+            slug
+            group{
+              name
+              slug
             }
           }
         }`,
     }).then(({ success, data, response }) => {
-        if(success && data?.locations) {
+        if(success && data?.parameters) {
             return {
                 props: {
-                    locations: data.locations
+                    parameters: data.parameters
                 }
             }
         } else {
@@ -33,11 +34,10 @@ export async function getServerSideProps({ query }) {
     })
 }
 
-
-const LocationsPage = ({ locations }) => (
-    <AppView meta={{ title: 'Locations' }}>
-        <LocationsListingView locations={locations} />
+const ParametersPage = ({ parameters }) => (
+    <AppView meta={{ title: 'Parameters' }}>
+        <ParametersListingView  parameters={parameters} />
     </AppView>
 );
 
-export default LocationsPage;
+export default ParametersPage;

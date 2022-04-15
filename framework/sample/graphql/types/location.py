@@ -74,7 +74,18 @@ class LocationType(BasicLocationType):
         return {'qs': TestRecord.objects.filter(location=self)}
 
 
+@strawberry.type
+class LocationStat:
+    rank: int
+    location: BasicLocationType
+    value: float
+    maxValue: float
+    minValue: float
+    samples: int
+
+
 __all__ = [
     'BasicLocationType',
-    'LocationType'
+    'LocationType',
+    'LocationStat'
 ]

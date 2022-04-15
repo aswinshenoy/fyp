@@ -53,11 +53,11 @@ const ParameterPageView = ({ years, parameter: _parameter }) => {
                         link: "/parameters"
                     },
                     {
-                        title: parameter.name,
-                        link: `/parameter/${parameter.slug}`
+                        title: parameter?.name,
+                        link: `/parameter/${parameter?.slug}`
                     }
                 ]}
-                title={parameter.name}
+                title={parameter?.name}
             />
             <div>
                 <div className="flex flex-wrap p-2">

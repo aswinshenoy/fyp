@@ -47,7 +47,7 @@ export async function getServerSideProps({ query }) {
 
 const ParameterPage = ({ years, parameter }) => (
     <AppView meta={{ title: `${parameter?.name} - Water Parameter Statistics` }}>
-        <ParameterPageView years={years} parameter={parameter} />
+        {parameter ? <ParameterPageView years={years} parameter={parameter} /> : <div>Failed to Load</div>}
     </AppView>
 );
 
