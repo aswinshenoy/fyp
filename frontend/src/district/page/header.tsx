@@ -8,11 +8,11 @@ const DistrictPageHeader = ({ district }) => (
             <Breadcrumb
                 items={[
                     {
-                        link: `/state/${district?.state}`,
-                        title: district?.state
+                        link: `/state/${district?.state?.slug}`,
+                        title: district?.state?.name
                     },
                     {
-                        link: `/district/${district?.name}`,
+                        link: `/district/${district?.slug}`,
                         title: district?.name,
                         isActive: true
                     }
@@ -30,8 +30,8 @@ const DistrictPageHeader = ({ district }) => (
                     <div>
                         <div>
                             <div className="text-lg font-semibold">Water Quality Index (WQI)</div>
-                            <div className="text-6xl font-bold">{Math.round(district?.avgMetrics?.wqi?.value)}/900</div>
-                            <div>{district?.avgMetrics?.wqi?.group}</div>
+                            <div className="text-6xl font-bold">{Math.round(district?.stats?.wqi?.value)}/900</div>
+                            <div>{district?.stats?.wqi?.group}</div>
                         </div>
                     </div>
                 </div>

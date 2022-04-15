@@ -6,40 +6,39 @@ import DistrictPageView from "../../src/district/page";
 export async function getServerSideProps({ query }) {
     return APIFetch({
         query: `query ($slug: String!) {
-              district(slug: $slug) {
-                name
-                state
-                locations{
-                    id
-                    name
-                    wqi{
-                      group
-                      value
-                    }
-                }
-                avgMetrics {
-                  manganese
-                  iron
-                  nitrate
-                  arsenic
-                  fluoride
-                  chloride
-                  sulphate
-                  copper
-                  tds
-                  ph
-                  hardness
-                  alkalinity
-                  turbidity
-                  ecoil
-                  coliform
-                  wqi {
-                    value
-                    group
+          district(slug: $slug) {
+            name
+            state {
+              id
+              slug
+              name
+            }
+            locations {
+              id
+              name
+              wqi {
+                group
+                value
+              }
+            }
+            stats {
+              wqi {
+                  value
+                  group
+              }
+              avg {
+                parameter {
+                  slug
+                  name
+                  group{
+                    slug
                   }
                 }
+                value
               }
-            }`,
+            }
+          }
+        }`,
         variables: { slug: query?.slug }
     }).then(({ success, data, response }) => {
         if(success && data?.district) {
@@ -59,7 +58,7 @@ export async function getServerSideProps({ query }) {
 }
 
 const DistrictPage = ({ district }) => (
-    <AppView meta={{ title: district?.name }}>
+    <AppView meta={{ title: `${district?.name} - District Water Statistics` }}>
         <DistrictPageView district={district} />
     </AppView>
 );

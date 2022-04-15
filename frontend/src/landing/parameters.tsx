@@ -61,6 +61,11 @@ const ParameterList = () => {
             id: 'hardness'
         },
         {
+            label: 'Turbidity',
+            physical: true,
+            id: 'turbidity'
+        },
+        {
             label: 'pH',
             physical: true,
             id: 'ph'

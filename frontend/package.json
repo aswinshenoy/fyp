@@ -13,7 +13,7 @@
     "@mantine/dates": "^4.1.2",
     "@mantine/hooks": "^4.1.2",
     "@mantine/next": "^4.1.2",
-    "@traboda/dsr": "0.6.4",
+    "@traboda/dsr": "0.7.8",
     "classnames": "2.3.1",
     "color": "4.2.1",
     "dayjs": "^1.11.0",

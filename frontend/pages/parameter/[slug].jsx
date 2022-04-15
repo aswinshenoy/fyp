@@ -7,12 +7,16 @@ import APIFetch from "../../src/utils/APIFetch";
 export async function getServerSideProps({ query }) {
     return APIFetch({
         query: `query ($slug: String!) {
+          years
           parameter(slug: $slug) {
             name
+            slug
+            id
             locations{
                 rank
                 location {
                   name
+                  type
                   id
                 }
                 value
@@ -27,7 +31,8 @@ export async function getServerSideProps({ query }) {
         if(success && data?.parameter) {
             return {
                 props: {
-                    parameter: data.parameter
+                    parameter: data.parameter,
+                    years: data?.years
                 }
             }
         } else {
@@ -40,9 +45,9 @@ export async function getServerSideProps({ query }) {
     })
 }
 
-const ParameterPage = ({ parameter }) => (
-    <AppView meta={{ title: parameter?.name }}>
-        <ParameterPageView parameter={parameter} />
+const ParameterPage = ({ years, parameter }) => (
+    <AppView meta={{ title: `${parameter?.name} - Water Parameter Statistics` }}>
+        <ParameterPageView years={years} parameter={parameter} />
     </AppView>
 );
 

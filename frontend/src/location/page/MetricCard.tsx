@@ -9,7 +9,7 @@ import {Badge} from "@traboda/dsr";
 
 echarts.use([CanvasRenderer, AxisPointerComponent, GridComponent, GaugeChart]);
 
-const MetricCard = ({ minValue, colors, maxValue, value, unit, label, chemical, biological, physical }) => (
+const MetricCard = ({ minValue, colors, maxValue, value, unit, parameter, chemical, biological, physical }) => (
     <Card>
         <div className="flex flex-wrap">
             <div className="w-1/2">
@@ -90,7 +90,7 @@ const MetricCard = ({ minValue, colors, maxValue, value, unit, label, chemical, 
                             color: 'auto'
                         },
                         data: [
-                            { value: (Math.round((value + Number.EPSILON) * 10000) / 10000), name: label }
+                            { value: (Math.round((value + Number.EPSILON) * 10000) / 10000), name: parameter?.name }
                         ]
                     }
                 ]

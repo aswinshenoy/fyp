@@ -1,7 +1,48 @@
-import React from "react";
-import {DataTable, PageHeader} from "@traboda/dsr";
+import React, {useEffect, useState} from "react";
+import {DataTable, PageHeader, SimpleSelect, TagSelector} from "@traboda/dsr";
 
-const ParameterPageView = ({ parameter }) => {
+import APIFetch from '../../utils/APIFetch';
+
+const ParameterPageView = ({ years, parameter: _parameter }) => {
+
+    const [level, setLevel] = useState('panchayat');
+    const [year, setYear] = useState(null);
+    const [parameter, setParameter] = useState(_parameter);
+    const [isLoading, setLoading] = useState(false);
+
+    const fetchData = () => {
+        setLoading(true);
+        APIFetch({
+            query: `query ($slug: String!, $level: String, $year: String) {
+              parameter(slug: $slug) {
+                name
+                slug
+                id
+                locations(level: $level, year: $year){
+                    rank
+                    location {
+                      name
+                      type
+                      id
+                    }
+                    value
+                    minValue
+                    maxValue
+                    samples
+                }
+              }
+            }`,
+            variables: { slug: parameter.slug, level, year }
+        }).then(({ success, data, response }) => {
+            setLoading(false)
+            if (success && data?.parameter) {
+                setParameter(data.parameter);
+            }
+        });
+    }
+
+    useEffect(fetchData, [level, year]);
+
 
     return (
         <div>
@@ -13,13 +54,67 @@ const ParameterPageView = ({ parameter }) => {
                     },
                     {
                         title: parameter.name,
-                        link: `/parameter/${parameter.name.toLowerCase()}`
+                        link: `/parameter/${parameter.slug}`
                     }
                 ]}
                 title={parameter.name}
             />
             <div>
+                <div className="flex flex-wrap p-2">
+                    <div className="w-1/2">
+
+                    </div>
+                    <div className="w-1/4 px-2 flex justify-end">
+                        <div>
+                            <div className="text-sm ml-2">
+                                Group by Year
+                            </div>
+                            <div style={{ width: '150px', maxWidth: '100%' }}>
+                                <SimpleSelect
+                                    name="year"
+                                    value={year}
+                                    labels={{
+                                        placeholder: "All Years",
+                                    }}
+                                    onChange={(year) => setYear(year)}
+                                    options={[
+                                        ...years.map(year => ({
+                                            label: year,
+                                            value: year.toString()
+                                        }))
+                                    ]}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-1/4 px-2 flex justify-end">
+                        <div>
+                            <div className="text-sm ml-2">
+                                Group by Location
+                            </div>
+                            <TagSelector
+                                value={level}
+                                onChange={(level) => setLevel(level?.value)}
+                                options={[
+                                    {
+                                        label: "Panchayat",
+                                        value: "panchayat"
+                                    },
+                                    {
+                                        label: "District",
+                                        value: "district"
+                                    },
+                                    {
+                                        label: "State",
+                                        value: "state"
+                                    }
+                                ]}
+                            />
+                        </div>
+                    </div>
+                </div>
                 <DataTable
+                    isLoading={isLoading}
                     properties={[
                         {
                             label: 'Rank',
@@ -30,7 +125,7 @@ const ParameterPageView = ({ parameter }) => {
                         {
                             label: 'Location',
                             id: 'location',
-                            link: (parameter) => `/location/${parameter?.location.id}`,
+                            link: (parameter) => `/${parameter?.location.type}/${parameter?.location.id}`,
                             value: (parameter) => parameter.location?.name,
                             space: '4'
                         },

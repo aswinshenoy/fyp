@@ -1,0 +1,114 @@
+[
+  {
+    "name": "Arsenic",
+    "slug": "arsenic",
+    "maxValue": 0.01,
+    "minValue": 0,
+    "group": "chemical"
+  },
+  {
+    "name": "Chloride",
+    "slug": "chloride",
+    "maxValue": 250,
+    "minValue": 0,
+    "group": "chemical"
+  },
+  {
+    "name": "Copper",
+    "slug": "copper",
+    "maxValue": 0.05,
+    "minValue": 0,
+    "group": "chemical"
+  },
+  {
+    "name": "Fluoride",
+    "slug": "fluoride",
+    "maxValue": 1.0,
+    "minValue": 0,
+    "group": "chemical"
+  },
+  {
+    "name": "Iron",
+    "slug": "iron",
+    "maxValue": 1.0,
+    "minValue": 0,
+    "group": "chemical"
+  },
+  {
+    "name": "Manganese",
+    "slug": "manganese",
+    "maxValue": 0.1,
+    "minValue": 0,
+    "group": "chemical"
+  },
+  {
+    "name": "Nitrate",
+    "slug": "nitrate",
+    "maxValue": 45,
+    "minValue": 0,
+    "group": "chemical"
+  },
+  {
+    "name": "Sulphate",
+    "slug": "sulphate",
+    "maxValue": 200,
+    "minValue": 0,
+    "group": "chemical"
+  },
+  {
+    "name": "Alkalinity",
+    "slug": "alkalinity",
+    "maxValue": 200,
+    "minValue": 0,
+    "group": "physical"
+  },
+    {
+    "name": "Turbidity",
+    "slug": "turbidity",
+    "maxValue": 150,
+    "minValue": 0,
+    "group": "physical"
+  },
+  {
+    "name": "Acidity (PH)",
+    "slug": "ph",
+    "maxValue": 6.5,
+    "minValue": 8.5,
+    "group": "physical"
+  },
+  {
+    "name": "Hardness",
+    "slug": "hardness",
+    "maxValue": 200,
+    "minValue": 0,
+    "group": "physical"
+  },
+  {
+    "name": "Total Dissolved Salts (TDS)",
+    "slug": "tds",
+    "maxValue": 200,
+    "minValue": 0,
+    "group": "physical"
+  },
+  {
+    "name": "E.Coli",
+    "slug": "ecoli",
+    "maxValue": 100,
+    "minValue": 0,
+    "group": "biological"
+  },
+  {
+    "name": "Coliform",
+    "slug": "coliform",
+    "maxValue": 100,
+    "minValue": 0,
+    "group": "biological"
+  },
+  {
+    "name": "Water Quality Index (WQI)",
+    "slug": "wqi",
+    "maxValue": 450,
+    "minValue": 0,
+    "group": null
+  }
+]

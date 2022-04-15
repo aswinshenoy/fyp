@@ -1,7 +1,7 @@
 import strawberry
 from typing import Optional
 
-from sample.models import Location
+from sample.models import District
 from sample.graphql.types import DistrictType
 
 
@@ -10,13 +10,10 @@ class DistrictQueries:
 
     @strawberry.field
     def district(self, info, slug: str) -> Optional[DistrictType]:
-        lc = Location.objects.filter(district__iexact=slug).first()
-        if lc:
-            return DistrictType(
-                name=lc.district,
-                state=lc.state
-            )
-        return None
+        try:
+            return District.objects.filter(slug=slug).first()
+        except District.DoesNotExist:
+            return None
 
 
 __all__ = [

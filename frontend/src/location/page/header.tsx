@@ -8,12 +8,12 @@ const LocationPageHeader = ({ location }) => (
             <Breadcrumb
                 items={[
                     {
-                        link: `/state/${location?.state.toLowerCase()}`,
-                        title: location?.state.toLowerCase()
+                        link: `/state/${location?.state.slug}`,
+                        title: location?.state.name
                     },
                     {
-                        link: `/district/${location?.district.toLowerCase()}`,
-                        title: location?.district.toLowerCase()
+                        link: `/district/${location?.district.slug}`,
+                        title: location?.district.name
                     },
                     {
                         link: `/location/${location?.id}`,
@@ -34,8 +34,8 @@ const LocationPageHeader = ({ location }) => (
                     <div>
                         <div>
                             <div className="text-lg font-semibold">Water Quality Index (WQI)</div>
-                            <div className="text-6xl font-bold">{Math.round(location?.avgMetrics?.wqi?.value)}/900</div>
-                            <div>{location?.avgMetrics?.wqi?.group}</div>
+                            <div className="text-6xl font-bold">{Math.round(location?.stats?.wqi?.value)}/900</div>
+                            <div>{location?.stats?.wqi?.group}</div>
                         </div>
                     </div>
                 </div>

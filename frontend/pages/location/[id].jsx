@@ -6,48 +6,51 @@ import AppView from "../../src/app";
 export async function getServerSideProps({ query }) {
     return APIFetch({
         query: `query ($id: ID!) {
-              location(id: $id) {
-                id
-                name
-                district
-                state
-                contamination {
-                  physical {
-                    value
-                    percent
-                  }
-                  chemical {
-                    value
-                    percent
-                  }
-                  biological {
-                    value
-                    percent
-                  }
-                }
-                avgMetrics {
-                  manganese
-                  iron
-                  nitrate
-                  arsenic
-                  fluoride
-                  chloride
-                  sulphate
-                  copper
-                  tds
-                  ph
-                  hardness
-                  alkalinity
-                  turbidity
-                  ecoil
-                  coliform
-                  wqi {
-                    value
-                    group
-                  }
-                }
+          location(id: $id) {
+            id
+            name
+            district {
+              id
+              slug
+              name
+            }
+            state {
+              id
+              slug
+              name
+            }
+            contamination {
+              physical {
+                value
+                percent
               }
-            }`,
+              chemical {
+                value
+                percent
+              }
+              biological {
+                value
+                percent
+              }
+            }
+            stats {
+               wqi {
+                  value
+                  group
+              }
+              avg {
+                parameter {
+                  slug
+                  name
+                  group{
+                    slug
+                  }
+                }
+                value
+              }
+            }
+          }
+        }`,
         variables: { id: query?.id }
     }).then(({ success, data, response }) => {
         if(success && data?.location) {
@@ -67,7 +70,7 @@ export async function getServerSideProps({ query }) {
 }
 
 const LocationPage = ({ location }) => (
-    <AppView meta={{ title: location?.name }}>
+    <AppView meta={{ title: `${location?.name} - Panchayath Water Statistics` }}>
         <LocationPageView location={location} />
     </AppView>
 );

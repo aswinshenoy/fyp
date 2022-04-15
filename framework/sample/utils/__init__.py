@@ -9,8 +9,12 @@ METRICS = {
         "name": "Chloride",
         "max": 250
     },
-    "copper": {
+    "iron": {
         "name": "Iron",
+        "max": 200,
+    },
+    "copper": {
+        "name": "Copper",
         "max": 0.3
     },
     "fluoride": {
@@ -44,6 +48,10 @@ METRICS = {
     },
     "alkalinity": {
         "name": "Alkalinity",
+        "max": 200
+    },
+    "turbidity": {
+        "name": "Turbidity",
         "max": 200
     },
     "ecoil": {

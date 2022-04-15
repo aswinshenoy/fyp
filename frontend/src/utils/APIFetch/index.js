@@ -1,7 +1,7 @@
 import GraphQLFetch from './GraphQLFetch';
 
 const APIFetch = async ({
-    query, variables, req
+    query, variables, req = null
 }) => {
     return await GraphQLFetch({ query, variables, req })
         .then(({ response, data, errors }) => {
