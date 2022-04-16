@@ -1,8 +1,9 @@
 from typing import Optional, List
 
 import strawberry
-from django.db.models import Avg, Q
+from django.db.models import Avg, Q, F, Count
 
+from framework.graphql.types import JSONScalar
 from .parameter import ParameterStatType
 
 
@@ -24,26 +25,6 @@ class WQIType:
         elif self < 300:
             return 'Very Poor'
         return 'Unsuitable'
-
-
-@strawberry.type
-class WaterParameters:
-    manganese: float
-    iron: float
-    nitrate: float
-    arsenic: float
-    fluoride: float
-    chloride: float
-    sulphate: float
-    copper: float
-    tds: float
-    ph: float
-    hardness: float
-    alkalinity: float
-    turbidity: float
-    wqi: WQIType
-    ecoil: float
-    coliform: float
 
 
 @strawberry.type
@@ -70,7 +51,7 @@ class ContaminationStat:
             ).count()
         return ContaminationTypeStat(
             value=count,
-            percent=(count/self['total'])*100
+            percent=(count/self['qs'].filter(parameter__group__slug='physical').count())*100
         )
 
     @strawberry.field
@@ -88,7 +69,7 @@ class ContaminationStat:
             ).count()
         return ContaminationTypeStat(
             value=count,
-            percent=(count / self['total']) * 100
+            percent=(count / self['qs'].filter(parameter__group__slug='chemical').count()) * 100
         )
 
     @strawberry.field
@@ -106,8 +87,14 @@ class ContaminationStat:
             ).count()
         return ContaminationTypeStat(
             value=count,
-            percent=(count / self['total']) * 100
+            percent=(count / self['qs'].filter(parameter__group__slug='biological').count()) * 100
         )
+
+
+@strawberry.type
+class SourceBreakUpType:
+    source: strawberry.LazyType["BasicTestSourceType", "sample.graphql.types.source"]
+    count: int
 
 
 @strawberry.type
@@ -116,6 +103,58 @@ class StatGeneratorType:
     @strawberry.field
     def wqi(self, info) -> Optional[WQIType]:
         return self['qs'].filter(parameter__slug='wqi').aggregate(wqi=Avg("value"))['wqi']
+
+    @strawberry.field
+    def yearly_trend(self, info) -> JSONScalar:
+        from sample.models import Parameter
+        data = {}
+        for p in Parameter.objects.all():
+            avg = self['qs'].filter(
+                parameter=p
+            ).annotate(year=F('timestamp__year')).values('year').annotate(avg=Avg('value')).values('year', 'avg')
+            pData = {}
+            for d in avg:
+                pData[d['year']] = d['avg']
+            data[p.slug] = pData
+        return data
+
+    @strawberry.field
+    def source_breakup(self, info) -> Optional[List[SourceBreakUpType]]:
+        breakup = self['qs'].values('source').annotate(count=Count('source')).order_by('-count').values(
+            'source_id', 'count'
+        )
+        from sample.models import TestSourceType
+        sources = TestSourceType.objects.all()
+        sourceMap = {}
+        for s in sources:
+            sourceMap[s.id] = s
+        data = []
+        for b in breakup:
+            if 'source_id' in b and b['source_id'] and b['source_id'] in sourceMap:
+                data.append(
+                    SourceBreakUpType(
+                        source=sourceMap[b['source_id']],
+                        count=b['count']
+                    )
+                )
+        return data
+
+    @strawberry.field
+    def test_rates_yearly(self, info) -> Optional[JSONScalar]:
+        counts = self['qs'].annotate(year=F('timestamp__year')).values('year').annotate(
+            count=Count('*')
+        ).values('year', 'count')
+        data = {}
+        for d in counts:
+            data[d['year']] = d['count']
+        return data
+
+    @strawberry.field
+    def contamination(self) -> ContaminationStat:
+        return {
+            'qs': self['qs'],
+            'total': self['qs'].count()
+        }
 
     @strawberry.field
     def avg(self, info) -> Optional[List[ParameterStatType]]:
@@ -145,7 +184,6 @@ class SearchResult:
 
 __all__ = [
     'WQIType',
-    'WaterParameters',
     'StatGeneratorType',
     'ContaminationStat',
     'SearchResult'

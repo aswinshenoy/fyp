@@ -42,29 +42,6 @@ class BasicLocationType:
 class LocationType(BasicLocationType):
 
     @strawberry.field
-    def contamination(self) -> ContaminationStat:
-        from sample.models import TestRecord
-        return {
-            'qs': TestRecord.objects.filter(location=self),
-            'total': TestRecord.objects.filter(location=self).count()
-        }
-
-    @strawberry.field
-    def yearly_trend(self, info) -> JSONScalar:
-        from sample.models import TestRecord, Parameter
-        data = {}
-        for p in Parameter.objects.all():
-            avg = TestRecord.objects.filter(
-                location=self,
-                parameter=p
-            ).annotate(year=F('timestamp__year')).values('year').annotate(avg=Avg('value')).values('year', 'avg')
-            pData = {}
-            for d in avg:
-                pData[d['year']] = d['avg']
-            data[p.slug] = pData
-        return data
-
-    @strawberry.field
     def test_stats(self, info) -> LocationTestStat:
         return self  # type: ignore
 

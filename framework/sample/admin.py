@@ -5,34 +5,47 @@ from sample.models import State, District, Location, ParameterGroup, Parameter, 
 
 @admin.register(State)
 class StateAdmin(admin.ModelAdmin):
-    pass
+    search_fields = ['name', 'slug']
+    list_display = ['name', 'slug']
 
 
 @admin.register(District)
 class DistrictAdmin(admin.ModelAdmin):
-    pass
+    search_fields = ['name', 'slug']
+    list_display = ['name', 'state', 'slug']
+    list_filter = ['state']
+    autocomplete_fields = ['state']
 
 
 @admin.register(Location)
 class LocationAdmin(admin.ModelAdmin):
-    pass
+    search_fields = ['name']
+    list_display = ['name', 'district']
+    autocomplete_fields = ['district']
 
 
 @admin.register(ParameterGroup)
 class ParameterGroupAdmin(admin.ModelAdmin):
-    pass
+    search_fields = ['name', 'slug']
 
 
 @admin.register(Parameter)
 class ParameterAdmin(admin.ModelAdmin):
-    pass
+    autocomplete_fields = ['group']
+    search_fields = ['name', 'slug']
+    list_display = ['name', 'slug', 'group']
+    list_filter = ['group']
 
 
 @admin.register(TestSourceType)
 class TestSourceTypeAdmin(admin.ModelAdmin):
-    pass
+    search_fields = ['name', 'slug']
+    list_display = ['name', 'slug']
 
 
 @admin.register(TestRecord)
 class TestSampleAdmin(admin.ModelAdmin):
-    list_display = ['id', 'parameter', 'value', 'location']
+    search_fields = ['location__name', 'parameter__name', 'location__district__name', 'location__district__state__name']
+    autocomplete_fields = ['location', 'parameter', 'source']
+    list_display = ['id', 'parameter', 'value', 'location', 'source', 'timestamp']
+    list_filter = ['parameter', 'source', 'timestamp']

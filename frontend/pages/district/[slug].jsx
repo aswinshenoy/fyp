@@ -7,7 +7,9 @@ export async function getServerSideProps({ query }) {
     return APIFetch({
         query: `query ($slug: String!) {
           district(slug: $slug) {
+            id
             name
+            slug
             state {
               id
               slug
@@ -26,6 +28,20 @@ export async function getServerSideProps({ query }) {
                   value
                   group
               }
+              contamination {
+                  physical {
+                    value
+                    percent
+                  }
+                  chemical {
+                    value
+                    percent
+                  }
+                  biological {
+                    value
+                    percent
+                  }
+                }
               avg {
                 parameter {
                   slug

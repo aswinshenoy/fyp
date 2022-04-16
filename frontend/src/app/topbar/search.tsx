@@ -47,7 +47,15 @@ const SearchBoxContainer = () => {
 
     return (
         <div className="relative text-black">
-            <SearchBox hideLabel keyword={keyword} setKeyword={setKeyword} onSearch={handleSearch} />
+            <SearchBox
+                labels={{
+                    placeholder: 'Search for panchayat, district, state or parameter'
+                }}
+                hideLabel
+                keyword={keyword}
+                setKeyword={setKeyword}
+                onSearch={handleSearch}
+            />
             {keyword?.length > 3 && (
                 <ResultContainer>
                     <div className="p-2 bg-gray-300 text-sm rounded-t-lg mb-2">Search Results</div>

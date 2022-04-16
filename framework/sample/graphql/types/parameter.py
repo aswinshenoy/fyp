@@ -28,6 +28,9 @@ class ParameterType(BasicParameterType):
     def locations(
         self, info,
         level: Optional[str] = 'panchayat',
+        sourceID: Optional[strawberry.ID] = None,
+        districtID: Optional[strawberry.ID] = None,
+        stateID: Optional[strawberry.ID] = None,
         year: Optional[str] = None,
         isAsc: Optional[bool] = False, count: Optional[int] = 50
     ) -> List[Optional[strawberry.LazyType["LocationStat", "sample.graphql.types.location"]]]:
@@ -35,6 +38,12 @@ class ParameterType(BasicParameterType):
         qs = TestRecord.objects.filter(parameter=self)
         if year is not None:
             qs = qs.filter(timestamp__year=year)
+        if sourceID is not None:
+            qs = qs.filter(source_id=sourceID)
+        if districtID is not None:
+            qs = qs.filter(location__district_id=districtID)
+        if stateID is not None:
+            qs = qs.filter(location__district__state_id=stateID)
         if level == 'panchayat':
             qs = qs.values('location').annotate(
                 locationID=F('location_id')

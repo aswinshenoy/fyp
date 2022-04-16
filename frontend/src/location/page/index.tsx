@@ -1,9 +1,11 @@
 import React from "react";
+import {TabSwitcher} from "@traboda/dsr";
+
 import LocationPageHeader from "./header";
 import MetricView from "./metrics";
 import Contamination from "./contamination";
-import {TabSwitcher} from "@traboda/dsr";
-import YearlyTrends from "./yearly";
+import LocationTestStats from "./TestStats";
+import LocationYearlyTrends from "./YearlyTrends";
 
 const LocationPageView = ({ location }) => (
     <div className="p-3">
@@ -13,7 +15,7 @@ const LocationPageView = ({ location }) => (
                     <LocationPageHeader location={location} />
                 </div>
                 <div className="p-2">
-                    <Contamination location={location} />
+                    <Contamination contamination={location?.stats?.contamination} />
                 </div>
             </div>
         </div>
@@ -34,9 +36,18 @@ const LocationPageView = ({ location }) => (
                     key: 'parameter_trend',
                     rendererFunc: () => (
                         <div>
-                            <YearlyTrends locationID={location?.id} />
+                            <LocationYearlyTrends locationID={location?.id} />
                         </div>
                     ),
+                },
+                {
+                    label: 'Test Stats',
+                    key: 'test_stats',
+                    rendererFunc: () => (
+                        <div>
+                            <LocationTestStats locationID={location?.id} />
+                        </div>
+                    )
                 }
             ]}
         />

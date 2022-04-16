@@ -3,7 +3,6 @@ import '../src/styles/style.css';
 import { AppProps } from 'next/app';
 import React from 'react';
 import Head from 'next/head';
-import { MantineProvider } from '@mantine/core';
 
 // if(typeof window !== 'undefined' && process.env.NODE_ENV !== 'production') {
 //   const ReactDOM = require('react-dom');
@@ -21,9 +20,7 @@ export default function WebApp({ Component, pageProps }: AppProps) {
               content="width=device-width, minimum-scale=1, shrink-to-fit=no, initial-scale=1"
           />
         </Head>
-        <MantineProvider  withGlobalStyles withNormalizeCSS>
-            <Component {...pageProps} />
-        </MantineProvider>
+        <Component {...pageProps} />
       </>
   );
 }

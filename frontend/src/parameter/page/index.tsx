@@ -1,24 +1,48 @@
 import React, {useEffect, useState} from "react";
-import {DataTable, PageHeader, SimpleSelect, TagSelector} from "@traboda/dsr";
+import { DataTable, PageHeader } from "@traboda/dsr";
 
 import APIFetch from '../../utils/APIFetch';
+import ParameterPageHeader from "./header";
 
-const ParameterPageView = ({ years, parameter: _parameter }) => {
+const ParameterPageView = ({ districtID, years, sources, parameter: _parameter }) => {
 
     const [level, setLevel] = useState('panchayat');
     const [year, setYear] = useState(null);
+    const [state, setState] = useState(null);
+    const [district, setDistrict] = useState(null);
+    const [sourceID, setSourceID] = useState<string|number>(-1);
     const [parameter, setParameter] = useState(_parameter);
     const [isLoading, setLoading] = useState(false);
+
+    useEffect(() => {
+        if(districtID) {
+            APIFetch({
+                query: `query ($districtID: ID) {
+              district(id: $districtID) {
+                label: name
+                value: id
+                id
+                slug
+              }
+            }`,
+                variables: { districtID }
+            }).then(({ data, success }) => {
+                if(success && data?.district){
+                    setDistrict(data.district);
+                }
+            })
+        }
+    }, [districtID])
 
     const fetchData = () => {
         setLoading(true);
         APIFetch({
-            query: `query ($slug: String!, $level: String, $year: String) {
+            query: `query ($slug: String!, $level: String, $year: String, $sourceID: ID, $districtID: ID, $stateID: ID) {
               parameter(slug: $slug) {
                 name
                 slug
                 id
-                locations(level: $level, year: $year){
+                locations(level: $level, year: $year, sourceID: $sourceID, districtID: $districtID, stateID: $stateID) {
                     rank
                     location {
                       name
@@ -32,7 +56,12 @@ const ParameterPageView = ({ years, parameter: _parameter }) => {
                 }
               }
             }`,
-            variables: { slug: parameter.slug, level, year }
+            variables: {
+                slug: parameter.slug, level, year,
+                sourceID: sourceID != -1 ? sourceID : null,
+                districtID: district?.id ? district?.id : null,
+                stateID: state?.id ? state?.id : null,
+            }
         }).then(({ success, data, response }) => {
             setLoading(false)
             if (success && data?.parameter) {
@@ -41,7 +70,7 @@ const ParameterPageView = ({ years, parameter: _parameter }) => {
         });
     }
 
-    useEffect(fetchData, [level, year]);
+    useEffect(fetchData, [level, year, sourceID, district, state]);
 
 
     return (
@@ -60,59 +89,20 @@ const ParameterPageView = ({ years, parameter: _parameter }) => {
                 title={parameter?.name}
             />
             <div>
-                <div className="flex flex-wrap p-2">
-                    <div className="w-1/2">
-
-                    </div>
-                    <div className="w-1/4 px-2 flex justify-end">
-                        <div>
-                            <div className="text-sm ml-2">
-                                Group by Year
-                            </div>
-                            <div style={{ width: '150px', maxWidth: '100%' }}>
-                                <SimpleSelect
-                                    name="year"
-                                    value={year}
-                                    labels={{
-                                        placeholder: "All Years",
-                                    }}
-                                    onChange={(year) => setYear(year)}
-                                    options={[
-                                        ...years.map(year => ({
-                                            label: year,
-                                            value: year.toString()
-                                        }))
-                                    ]}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="w-1/4 px-2 flex justify-end">
-                        <div>
-                            <div className="text-sm ml-2">
-                                Group by Location
-                            </div>
-                            <TagSelector
-                                value={level}
-                                onChange={(level) => setLevel(level?.value)}
-                                options={[
-                                    {
-                                        label: "Panchayat",
-                                        value: "panchayat"
-                                    },
-                                    {
-                                        label: "District",
-                                        value: "district"
-                                    },
-                                    {
-                                        label: "State",
-                                        value: "state"
-                                    }
-                                ]}
-                            />
-                        </div>
-                    </div>
-                </div>
+                <ParameterPageHeader
+                    state={state}
+                    setState={setState}
+                    district={district}
+                    setDistrict={setDistrict}
+                    years={years}
+                    sources={sources}
+                    year={year}
+                    setYear={setYear}
+                    sourceID={sourceID}
+                    setSourceID={setSourceID}
+                    level={level}
+                    setLevel={setLevel}
+                />
                 <DataTable
                     isLoading={isLoading}
                     properties={[

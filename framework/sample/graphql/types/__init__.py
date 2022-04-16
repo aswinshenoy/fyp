@@ -1,20 +1,8 @@
 import strawberry
 
-from .shared import WQIType, WaterParameters
+from .shared import WQIType
 from .district import DistrictType
 from .location import LocationType, BasicLocationType
-
-
-@strawberry.type
-class YearlyValueType:
-
-    @strawberry.field
-    def value(self) -> float:
-        return self['value']
-
-    @strawberry.field
-    def year(self) -> int:
-        return self['year']
 
 
 @strawberry.type

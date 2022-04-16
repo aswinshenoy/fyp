@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import APIFetch from '../../../utils/APIFetch';
-import ParameterYearlyCard from "./card";
 
-const YearlyTrends = ({ locationID }) => {
+import APIFetch from '../../utils/APIFetch';
+import LineChartCard from "../../shared/LineChartCard";
+
+
+const LocationYearlyTrends = ({ locationID }) => {
 
     const [trends, setTrends] = useState(null);
 
@@ -10,7 +12,9 @@ const YearlyTrends = ({ locationID }) => {
         APIFetch({
             query: `query($id: ID!){
               location(id: $id){
-                yearlyTrend
+                stats {
+                    yearlyTrend
+                }
               }
             }`,
             variables: {
@@ -19,10 +23,10 @@ const YearlyTrends = ({ locationID }) => {
         }).then(({ data, success, errors }) => {
             if(success && data?.location) {
                 const params = []
-                Object.keys(data.location.yearlyTrend).forEach(key => {
+                Object.keys(data.location.stats?.yearlyTrend).forEach(key => {
                     params.push({
                         name: key,
-                        trend: data.location.yearlyTrend[key]
+                        trend: data.location.stats?.yearlyTrend[key]
                     })
                 })
                 setTrends(params);
@@ -39,7 +43,7 @@ const YearlyTrends = ({ locationID }) => {
                 <div className="flex flex-wrap mx-0">
                     {trends?.map((t) => (
                         <div key={`${t.name}-trend-card`} className="w-1/3 p-2">
-                            <ParameterYearlyCard
+                            <LineChartCard
                                 trend={t.trend}
                                 name={t.name}
                             />
@@ -52,4 +56,4 @@ const YearlyTrends = ({ locationID }) => {
 
 };
 
-export default YearlyTrends;
+export default LocationYearlyTrends;

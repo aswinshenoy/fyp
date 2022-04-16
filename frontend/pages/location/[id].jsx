@@ -19,25 +19,25 @@ export async function getServerSideProps({ query }) {
               slug
               name
             }
-            contamination {
-              physical {
-                value
-                percent
-              }
-              chemical {
-                value
-                percent
-              }
-              biological {
-                value
-                percent
-              }
-            }
             stats {
                wqi {
                   value
                   group
               }
+                contamination {
+                  physical {
+                    value
+                    percent
+                  }
+                  chemical {
+                    value
+                    percent
+                  }
+                  biological {
+                    value
+                    percent
+                  }
+                }
               avg {
                 parameter {
                   slug

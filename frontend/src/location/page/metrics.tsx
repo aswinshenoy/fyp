@@ -2,9 +2,7 @@ import React from 'react';
 import MetricCard from "./MetricCard";
 import {TabSwitcher} from "@traboda/dsr";
 
-const MetricView = ({ location }) => {
-
-    console.log(location?.stats?.avg)
+const MetricView = ({ districtID = null, location }) => {
 
     return (
         <div className="w-full">
@@ -22,6 +20,7 @@ const MetricView = ({ location }) => {
                                     <div key={m.label} className="xl:w-1/5 lg:w-1/4 md:w-1/3 sm:w-1/2 w-full p-2">
                                         {/*// @ts-ignore*/}
                                         <MetricCard
+                                            districtID={districtID}
                                             key={m.label}
                                             {...m}
                                             colors={m.parameter?.slug === 'ph' ?  [

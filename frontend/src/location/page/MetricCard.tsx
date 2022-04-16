@@ -1,16 +1,15 @@
 import React from "react";
-import { Card } from '@mantine/core';
 import ReactEChartsCore from 'echarts-for-react/lib/core';
 import * as echarts from 'echarts/core';
 import { AxisPointerComponent, GridComponent } from 'echarts/components';
 import { GaugeChart } from 'echarts/charts';
 import { CanvasRenderer } from 'echarts/renderers';
-import {Badge} from "@traboda/dsr";
+import {Badge, Button, Card} from "@traboda/dsr";
 
 echarts.use([CanvasRenderer, AxisPointerComponent, GridComponent, GaugeChart]);
 
-const MetricCard = ({ minValue, colors, maxValue, value, unit, parameter, chemical, biological, physical }) => (
-    <Card>
+const MetricCard = ({ minValue, colors, maxValue, value, unit, parameter, chemical, biological, physical, districtID = null }) => (
+    <Card className="bg-white">
         <div className="flex flex-wrap">
             <div className="w-1/2">
                 {chemical ? (
@@ -96,6 +95,13 @@ const MetricCard = ({ minValue, colors, maxValue, value, unit, parameter, chemic
                 ]
             }}
         />
+        {districtID && (
+            <div>
+                <Button link={`/parameter/${parameter?.slug}?districtID=${districtID}`}>
+                    Explore
+                </Button>
+            </div>
+        )}
     </Card>
 );
 
