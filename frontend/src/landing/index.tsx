@@ -1,15 +1,16 @@
 import React from 'react';
 import ParameterList from "./parameters";
+import StatsOverview from "./stats";
 
 const LandingPageView = () => {
 
     return (
         <div>
             <div className="flex flex-wrap mx-0">
-                <div className="w-2/3 p-2">
-                    <h1>Hello</h1>
+                <div className="w-1/2 p-2">
+                    <StatsOverview />
                 </div>
-                <div className="w-1/3 p-2">
+                <div className="w-1/2 p-2">
                     <ParameterList />
                 </div>
             </div>

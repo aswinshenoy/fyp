@@ -3,44 +3,7 @@ from datetime import datetime
 from django.core.management import BaseCommand
 
 from sample.models import State, District, ParameterGroup, Parameter, TestSourceType, Location, TestRecord
-
-
-def calculate_wqi(
-    manganese, iron, nitrate, arsenic, chloride, fluoride, sulphate, copper, tds, ph, hardness, alkalinity, turbidity
-):
-    manganese = round(((float(manganese) / 0.1) * 100 * 0.789), 4)
-    iron = round((float(iron) / 0.3) * 100 * 0.026, 4)
-    nitrate = round((float(nitrate) / 45) * 100 * 0.135, 4)
-    arsenic = round((float(arsenic) / 0.01) * 100 * 0.1315, 4)
-    fluoride = round((float(fluoride) / 1) * 100 * 0.1315, 4)
-    chloride = round((float(chloride) / 250) * 100 * 0.1315, 4)
-    sulphate = round((float(sulphate) / 200) * 100 * 0.789, 4)
-    copper = round((float(copper) / 0.05) * 100 * 0.789, 4)
-    tds = round((float(tds) / 500) * 100 * 0.0789, 4)
-
-    ph = round((float(ph) - 7) / (8.5 - 7) * 100 * 0.0789, 4)
-    hardness = round((float(hardness) / 200) * 100 * 0.02631, 4)
-    alkalinity = round((float(alkalinity) / 200) * 100 * 0.0263, 4)
-    turbidity = round((float(turbidity) / 200) * 100 * 0.0263, 4)
-
-    return round(
-        (
-            manganese +
-            iron +
-            nitrate +
-            arsenic +
-            fluoride +
-            chloride +
-            sulphate +
-            copper +
-            tds +
-            ph +
-            hardness +
-            alkalinity +
-            turbidity
-        ),
-        5
-    )
+from sample.utils import calculate_wqi
 
 
 class Command(BaseCommand):
@@ -337,8 +300,6 @@ class Command(BaseCommand):
                 hardness=d['hd'] if d['hd'] != '' else 0,
                 alkalinity=d['alk'] if d['alk'] != '' else 0,
                 turbidity=d['trb'] if d['trb'] != '' else 0,
-                # coliform=coliform,
-                # ecoli=ecoli
             )
             wqiObj = TestRecord(
                 location_id=location,
