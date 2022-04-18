@@ -13,7 +13,14 @@ const errorCodeStatuses = {
     504: { code: 'GATEWAY_TIMEOUT', label: 'Gateway Timeout (504)' },
 };
 
-const GraphQLFetch = async ({ query, endpoint, variables, req = null }) => {
+type GraphQLFetch = {
+    query: string,
+    variables?: {},
+    endpoint?: string,
+    req?: any
+};
+
+const GraphQLFetch = async ({ query, endpoint, variables, req = null }: GraphQLFetch) => {
     const APIConfig = {
         method: 'POST', credentials: 'include', headers: {},
         body: JSON.stringify({ query, variables: variables || null }),

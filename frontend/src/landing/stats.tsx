@@ -4,9 +4,13 @@ import {Card} from "@traboda/dsr";
 import APIFetch from "../utils/APIFetch";
 import LineChartCard from "../shared/LineChartCard";
 
+type StatsType = {
+    wqiYearly: (object|any|{})
+}
+
 const StatsOverview = () => {
 
-    const [stats, setStats] = useState([]);
+    const [stats, setStats] = useState<StatsType>();
 
     const fetchStats = () => {
         APIFetch({
