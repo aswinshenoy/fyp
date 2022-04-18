@@ -1,0 +1,73 @@
+version: '3.6'
+services:
+    db:
+        container_name: database
+        restart: always
+        image: postgres:13-alpine
+        networks:
+          - main
+        ports:
+          - 5432:5432
+        expose:
+          - 5432
+        environment:
+          - POSTGRES_DB
+          - POSTGRES_USER
+          - POSTGRES_PASSWORD
+    framework:
+        container_name: backend
+        networks:
+          - main
+        ports:
+          - 8000:8000
+        volumes:
+          - ./framework:/framework
+          - /var/run/docker.sock:/var/run/docker.sock
+        image: backend
+        build:
+          context: framework
+          dockerfile: Dockerfile
+        links:
+          - db:db
+        environment:
+          - DEBUG
+          - POSTGRES_DB
+          - POSTGRES_USER
+          - POSTGRES_PASSWORD
+          - POSTGRES_HOST=db
+    webapp:
+        container_name: frontend
+        image: frontend
+        ports:
+          - 3000:3000
+        networks:
+          - main
+        links:
+          - framework:framework
+        volumes:
+          - ./webapp:/app
+          - /app/node_modules
+          - /app/.next
+        environment:
+          - PREFETCH_SERVER_ENDPOINT=http://framework:8000/api/graphql/
+          - GRAPHQL_SERVER_ENDPOINT=/api/graphql/
+        build:
+          context: frontend
+          dockerfile: Dockerfile
+    nginx:
+        container_name: rproxy
+        image: nginx
+        build:
+          context: nginx
+          dockerfile: Dockerfile
+        ports:
+          - "80:80"
+        depends_on:
+          - framework
+          - webapp
+        networks:
+          - main
+        command: [nginx-debug, '-g', 'daemon off;']
+
+networks:
+  main:
