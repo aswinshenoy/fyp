@@ -5,8 +5,8 @@ RUN apk add --no-cache libc6-compat
 
 RUN mkdir /app
 WORKDIR /app
-COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
+COPY package.json package-lock.json ./
+RUN npm install
 
 FROM node:alpine AS builder
 WORKDIR /app
@@ -14,7 +14,7 @@ COPY . .
 COPY --from=deps /app/node_modules ./node_modules
 ARG NODE_ENV=production
 ARG NEXT_TELEMETRY_DISABLED=1
-RUN yarn run build
+RUN npm run build
 
 FROM node:alpine AS runner
 WORKDIR /app
@@ -30,4 +30,4 @@ COPY --from=builder /app/pages ./pages
 USER nextjs
 
 EXPOSE 80
-CMD yarn start
+CMD npm start
