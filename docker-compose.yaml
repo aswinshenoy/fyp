@@ -52,7 +52,7 @@ services:
           - PREFETCH_SERVER_ENDPOINT=http://framework:8000/api/graphql/
           - GRAPHQL_SERVER_ENDPOINT=/api/graphql/
         build:
-          context: webapp
+          context: frontend
           dockerfile: Dockerfile
     nginx:
         container_name: rproxy
