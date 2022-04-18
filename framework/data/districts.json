@@ -1,0 +1,2890 @@
+[
+  {
+    "name": "Anantapur",
+    "state": "IN-AP"
+  },
+  {
+    "name": "Chittoor",
+    "state": "IN-AP"
+  },
+  {
+    "name": "East Godavari",
+    "state": "IN-AP"
+  },
+  {
+    "name": "Guntur",
+    "state": "IN-AP"
+  },
+  {
+    "name": "Krishna",
+    "state": "IN-AP"
+  },
+  {
+    "name": "Kurnool",
+    "state": "IN-AP"
+  },
+  {
+    "name": "Nellore",
+    "state": "IN-AP"
+  },
+  {
+    "name": "Prakasam",
+    "state": "IN-AP"
+  },
+  {
+    "name": "Srikakulam",
+    "state": "IN-AP"
+  },
+  {
+    "name": "Visakhapatnam",
+    "state": "IN-AP"
+  },
+  {
+    "name": "Vizianagaram",
+    "state": "IN-AP"
+  },
+  {
+    "name": "West Godavari",
+    "state": "IN-AP"
+  },
+  {
+    "name": "YSR Kadapa",
+    "state": "IN-AP"
+  },
+  {
+    "name": "Tawang",
+    "state": "IN-AR"
+  },
+  {
+    "name": "West Kameng",
+    "state": "IN-AR"
+  },
+  {
+    "name": "East Kameng",
+    "state": "IN-AR"
+  },
+  {
+    "name": "Papum Pare",
+    "state": "IN-AR"
+  },
+  {
+    "name": "Kurung Kumey",
+    "state": "IN-AR"
+  },
+  {
+    "name": "Kra Daadi",
+    "state": "IN-AR"
+  },
+  {
+    "name": "Lower Subansiri",
+    "state": "IN-AR"
+  },
+  {
+    "name": "Upper Subansiri",
+    "state": "IN-AR"
+  },
+  {
+    "name": "West Siang",
+    "state": "IN-AR"
+  },
+  {
+    "name": "East Siang",
+    "state": "IN-AR"
+  },
+  {
+    "name": "Siang",
+    "state": "IN-AR"
+  },
+  {
+    "name": "Upper Siang",
+    "state": "IN-AR"
+  },
+  {
+    "name": "Lower Siang",
+    "state": "IN-AR"
+  },
+  {
+    "name": "Lower Dibang Valley",
+    "state": "IN-AR"
+  },
+  {
+    "name": "Dibang Valley",
+    "state": "IN-AR"
+  },
+  {
+    "name": "Anjaw",
+    "state": "IN-AR"
+  },
+  {
+    "name": "Lohit",
+    "state": "IN-AR"
+  },
+  {
+    "name": "Namsai",
+    "state": "IN-AR"
+  },
+  {
+    "name": "Changlang",
+    "state": "IN-AR"
+  },
+  {
+    "name": "Tirap",
+    "state": "IN-AR"
+  },
+  {
+    "name": "Longding",
+    "state": "IN-AR"
+  },
+  {
+    "name": "Baksa",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Barpeta",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Biswanath",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Bongaigaon",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Cachar",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Charaideo",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Chirang",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Darrang",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Dhemaji",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Dhubri",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Dibrugarh",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Goalpara",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Golaghat",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Hailakandi",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Hojai",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Jorhat",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Kamrup Metropolitan",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Kamrup",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Karbi Anglong",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Karimganj",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Kokrajhar",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Lakhimpur",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Majuli",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Morigaon",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Nagaon",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Nalbari",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Dima Hasao",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Sivasagar",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Sonitpur",
+    "state": "IN-AS"
+  },
+  {
+    "name": "South Salmara-Mankachar",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Tinsukia",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Udalguri",
+    "state": "IN-AS"
+  },
+  {
+    "name": "West Karbi Anglong",
+    "state": "IN-AS"
+  },
+  {
+    "name": "Araria",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Arwal",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Aurangabad",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Banka",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Begusarai",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Bhagalpur",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Bhojpur",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Buxar",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Darbhanga",
+    "state": "IN-BR"
+  },
+  {
+    "name": "East Champaran (Motihari)",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Gaya",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Gopalganj",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Jamui",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Jehanabad",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Kaimur (Bhabua)",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Katihar",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Khagaria",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Kishanganj",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Lakhisarai",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Madhepura",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Madhubani",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Munger (Monghyr)",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Muzaffarpur",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Nalanda",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Nawada",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Patna",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Purnia (Purnea)",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Rohtas",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Saharsa",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Samastipur",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Saran",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Sheikhpura",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Sheohar",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Sitamarhi",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Siwan",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Supaul",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Vaishali",
+    "state": "IN-BR"
+  },
+  {
+    "name": "West Champaran",
+    "state": "IN-BR"
+  },
+  {
+    "name": "Chandigarh",
+    "state": "IN-CH"
+  },
+  {
+    "name": "Balod",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Baloda Bazar",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Balrampur",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Bastar",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Bemetara",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Bijapur",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Bilaspur",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Dantewada (South Bastar)",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Dhamtari",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Durg",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Gariyaband",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Janjgir-Champa",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Jashpur",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Kabirdham (Kawardha)",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Kanker (North Bastar)",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Kondagaon",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Korba",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Korea (Koriya)",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Mahasamund",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Mungeli",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Narayanpur",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Raigarh",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Raipur",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Rajnandgaon",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Sukma",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Surajpur",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Surguja",
+    "state": "IN-CT"
+  },
+  {
+    "name": "Dadra & Nagar Haveli",
+    "state": "IN-DN"
+  },
+  {
+    "name": "Daman",
+    "state": "IN-DD"
+  },
+  {
+    "name": "Diu",
+    "state": "IN-DD"
+  },
+  {
+    "name": "Central Delhi",
+    "state": "IN-DL"
+  },
+  {
+    "name": "East Delhi",
+    "state": "IN-DL"
+  },
+  {
+    "name": "New Delhi",
+    "state": "IN-DL"
+  },
+  {
+    "name": "North Delhi",
+    "state": "IN-DL"
+  },
+  {
+    "name": "North East  Delhi",
+    "state": "IN-DL"
+  },
+  {
+    "name": "North West  Delhi",
+    "state": "IN-DL"
+  },
+  {
+    "name": "Shahdara",
+    "state": "IN-DL"
+  },
+  {
+    "name": "South Delhi",
+    "state": "IN-DL"
+  },
+  {
+    "name": "South East Delhi",
+    "state": "IN-DL"
+  },
+  {
+    "name": "South West  Delhi",
+    "state": "IN-DL"
+  },
+  {
+    "name": "West Delhi",
+    "state": "IN-DL"
+  },
+  {
+    "name": "North Goa",
+    "state": "IN-GA"
+  },
+  {
+    "name": "South Goa",
+    "state": "IN-GA"
+  },
+  {
+    "name": "Ahmedabad",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Amreli",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Anand",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Aravalli",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Banaskantha (Palanpur)",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Bharuch",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Bhavnagar",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Botad",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Chhota Udepur",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Dahod",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Dangs (Ahwa)",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Devbhoomi Dwarka",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Gandhinagar",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Gir Somnath",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Jamnagar",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Junagadh",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Kachchh",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Kheda (Nadiad)",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Mahisagar",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Mehsana",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Morbi",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Narmada (Rajpipla)",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Navsari",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Panchmahal (Godhra)",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Patan",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Porbandar",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Rajkot",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Sabarkantha (Himmatnagar)",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Surat",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Surendranagar",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Tapi (Vyara)",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Vadodara",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Valsad",
+    "state": "IN-GJ"
+  },
+  {
+    "name": "Ambala",
+    "state": "IN-HR"
+  },
+  {
+    "name": "Bhiwani",
+    "state": "IN-HR"
+  },
+  {
+    "name": "Charkhi Dadri",
+    "state": "IN-HR"
+  },
+  {
+    "name": "Faridabad",
+    "state": "IN-HR"
+  },
+  {
+    "name": "Fatehabad",
+    "state": "IN-HR"
+  },
+  {
+    "name": "Gurgaon",
+    "state": "IN-HR"
+  },
+  {
+    "name": "Hisar",
+    "state": "IN-HR"
+  },
+  {
+    "name": "Jhajjar",
+    "state": "IN-HR"
+  },
+  {
+    "name": "Jind",
+    "state": "IN-HR"
+  },
+  {
+    "name": "Kaithal",
+    "state": "IN-HR"
+  },
+  {
+    "name": "Karnal",
+    "state": "IN-HR"
+  },
+  {
+    "name": "Kurukshetra",
+    "state": "IN-HR"
+  },
+  {
+    "name": "Mahendragarh",
+    "state": "IN-HR"
+  },
+  {
+    "name": "Mewat",
+    "state": "IN-HR"
+  },
+  {
+    "name": "Palwal",
+    "state": "IN-HR"
+  },
+  {
+    "name": "Panchkula",
+    "state": "IN-HR"
+  },
+  {
+    "name": "Panipat",
+    "state": "IN-HR"
+  },
+  {
+    "name": "Rewari",
+    "state": "IN-HR"
+  },
+  {
+    "name": "Rohtak",
+    "state": "IN-HR"
+  },
+  {
+    "name": "Sirsa",
+    "state": "IN-HR"
+  },
+  {
+    "name": "Sonipat",
+    "state": "IN-HR"
+  },
+  {
+    "name": "Yamunanagar",
+    "state": "IN-HR"
+  },
+  {
+    "name": "Bilaspur",
+    "state": "IN-HP"
+  },
+  {
+    "name": "Chamba",
+    "state": "IN-HP"
+  },
+  {
+    "name": "Hamirpur",
+    "state": "IN-HP"
+  },
+  {
+    "name": "Kangra",
+    "state": "IN-HP"
+  },
+  {
+    "name": "Kinnaur",
+    "state": "IN-HP"
+  },
+  {
+    "name": "Kullu",
+    "state": "IN-HP"
+  },
+  {
+    "name": "Lahaul &amp; Spiti",
+    "state": "IN-HP"
+  },
+  {
+    "name": "Mandi",
+    "state": "IN-HP"
+  },
+  {
+    "name": "Shimla",
+    "state": "IN-HP"
+  },
+  {
+    "name": "Sirmaur (Sirmour)",
+    "state": "IN-HP"
+  },
+  {
+    "name": "Solan",
+    "state": "IN-HP"
+  },
+  {
+    "name": "Una",
+    "state": "IN-HP"
+  },
+  {
+    "name": "Anantnag",
+    "state": "IN-JK"
+  },
+  {
+    "name": "Bandipore",
+    "state": "IN-JK"
+  },
+  {
+    "name": "Baramulla",
+    "state": "IN-JK"
+  },
+  {
+    "name": "Budgam",
+    "state": "IN-JK"
+  },
+  {
+    "name": "Doda",
+    "state": "IN-JK"
+  },
+  {
+    "name": "Ganderbal",
+    "state": "IN-JK"
+  },
+  {
+    "name": "Jammu",
+    "state": "IN-JK"
+  },
+  {
+    "name": "Kargil",
+    "state": "IN-JK"
+  },
+  {
+    "name": "Kathua",
+    "state": "IN-JK"
+  },
+  {
+    "name": "Kishtwar",
+    "state": "IN-JK"
+  },
+  {
+    "name": "Kulgam",
+    "state": "IN-JK"
+  },
+  {
+    "name": "Kupwara",
+    "state": "IN-JK"
+  },
+  {
+    "name": "Leh",
+    "state": "IN-JK"
+  },
+  {
+    "name": "Poonch",
+    "state": "IN-JK"
+  },
+  {
+    "name": "Pulwama",
+    "state": "IN-JK"
+  },
+  {
+    "name": "Rajouri",
+    "state": "IN-JK"
+  },
+  {
+    "name": "Ramban",
+    "state": "IN-JK"
+  },
+  {
+    "name": "Reasi",
+    "state": "IN-JK"
+  },
+  {
+    "name": "Samba",
+    "state": "IN-JK"
+  },
+  {
+    "name": "Shopian",
+    "state": "IN-JK"
+  },
+  {
+    "name": "Srinagar",
+    "state": "IN-JK"
+  },
+  {
+    "name": "Udhampur",
+    "state": "IN-JK"
+  },
+  {
+    "name": "Bokaro",
+    "state": "IN-JH"
+  },
+  {
+    "name": "Chatra",
+    "state": "IN-JH"
+  },
+  {
+    "name": "Deoghar",
+    "state": "IN-JH"
+  },
+  {
+    "name": "Dhanbad",
+    "state": "IN-JH"
+  },
+  {
+    "name": "Dumka",
+    "state": "IN-JH"
+  },
+  {
+    "name": "East Singhbhum",
+    "state": "IN-JH"
+  },
+  {
+    "name": "Garhwa",
+    "state": "IN-JH"
+  },
+  {
+    "name": "Giridih",
+    "state": "IN-JH"
+  },
+  {
+    "name": "Godda",
+    "state": "IN-JH"
+  },
+  {
+    "name": "Gumla",
+    "state": "IN-JH"
+  },
+  {
+    "name": "Hazaribag",
+    "state": "IN-JH"
+  },
+  {
+    "name": "Jamtara",
+    "state": "IN-JH"
+  },
+  {
+    "name": "Khunti",
+    "state": "IN-JH"
+  },
+  {
+    "name": "Koderma",
+    "state": "IN-JH"
+  },
+  {
+    "name": "Latehar",
+    "state": "IN-JH"
+  },
+  {
+    "name": "Lohardaga",
+    "state": "IN-JH"
+  },
+  {
+    "name": "Pakur",
+    "state": "IN-JH"
+  },
+  {
+    "name": "Palamu",
+    "state": "IN-JH"
+  },
+  {
+    "name": "Ramgarh",
+    "state": "IN-JH"
+  },
+  {
+    "name": "Ranchi",
+    "state": "IN-JH"
+  },
+  {
+    "name": "Sahibganj",
+    "state": "IN-JH"
+  },
+  {
+    "name": "Seraikela-Kharsawan",
+    "state": "IN-JH"
+  },
+  {
+    "name": "Simdega",
+    "state": "IN-JH"
+  },
+  {
+    "name": "West Singhbhum",
+    "state": "IN-JH"
+  },
+  {
+    "name": "Bagalkot",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Ballari",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Belagavi",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Bengaluru Rural",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Bengaluru Urban",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Bidar",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Chamarajanagar",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Chikballapur",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Chikkamagaluru",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Chitradurga",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Dakshina Kannada",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Davangere",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Dharwad",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Gadag",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Hassan",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Haveri",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Kalaburagi",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Kodagu",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Kolar",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Koppal",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Mandya",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Mysuru",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Raichur",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Ramanagara",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Shivamogga",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Tumakuru",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Udupi",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Uttara Kannada",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Vijayapura",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Yadgir",
+    "state": "IN-KA"
+  },
+  {
+    "name": "Alappuzha",
+    "state": "IN-KL"
+  },
+  {
+    "name": "Ernakulam",
+    "state": "IN-KL"
+  },
+  {
+    "name": "Idukki",
+    "state": "IN-KL"
+  },
+  {
+    "name": "Kannur",
+    "state": "IN-KL"
+  },
+  {
+    "name": "Kasaragod",
+    "state": "IN-KL"
+  },
+  {
+    "name": "Kollam",
+    "state": "IN-KL"
+  },
+  {
+    "name": "Kottayam",
+    "state": "IN-KL"
+  },
+  {
+    "name": "Kozhikode",
+    "state": "IN-KL"
+  },
+  {
+    "name": "Malappuram",
+    "state": "IN-KL"
+  },
+  {
+    "name": "Palakkad",
+    "state": "IN-KL"
+  },
+  {
+    "name": "Pathanamthitta",
+    "state": "IN-KL"
+  },
+  {
+    "name": "Thiruvananthapuram",
+    "state": "IN-KL"
+  },
+  {
+    "name": "Thrissur",
+    "state": "IN-KL"
+  },
+  {
+    "name": "Wayanad",
+    "state": "IN-KL"
+  },
+  {
+    "name": "Agatti",
+    "state": "IN-LD"
+  },
+  {
+    "name": "Amini",
+    "state": "IN-LD"
+  },
+  {
+    "name": "Androth",
+    "state": "IN-LD"
+  },
+  {
+    "name": "Bithra",
+    "state": "IN-LD"
+  },
+  {
+    "name": "Chethlath",
+    "state": "IN-LD"
+  },
+  {
+    "name": "Kavaratti",
+    "state": "IN-LD"
+  },
+  {
+    "name": "Kadmath",
+    "state": "IN-LD"
+  },
+  {
+    "name": "Kalpeni",
+    "state": "IN-LD"
+  },
+  {
+    "name": "Kilthan",
+    "state": "IN-LD"
+  },
+  {
+    "name": "Minicoy",
+    "state": "IN-LD"
+  },
+  {
+    "name": "Agar Malwa",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Alirajpur",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Anuppur",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Ashoknagar",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Balaghat",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Barwani",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Betul",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Bhind",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Bhopal",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Burhanpur",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Chhatarpur",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Chhindwara",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Damoh",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Datia",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Dewas",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Dhar",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Dindori",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Guna",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Gwalior",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Harda",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Hoshangabad",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Indore",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Jabalpur",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Jhabua",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Katni",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Khandwa",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Khargone",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Mandla",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Mandsaur",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Morena",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Narsinghpur",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Neemuch",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Panna",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Raisen",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Rajgarh",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Ratlam",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Rewa",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Sagar",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Satna",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Sehore",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Seoni",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Shahdol",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Shajapur",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Sheopur",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Shivpuri",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Sidhi",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Singrauli",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Tikamgarh",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Ujjain",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Umaria",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Vidisha",
+    "state": "IN-MP"
+  },
+  {
+    "name": "Ahmednagar",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Akola",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Amravati",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Aurangabad",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Beed",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Bhandara",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Buldhana",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Chandrapur",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Dhule",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Gadchiroli",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Gondia",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Hingoli",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Jalgaon",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Jalna",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Kolhapur",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Latur",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Mumbai City",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Mumbai Suburban",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Nagpur",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Nanded",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Nandurbar",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Nashik",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Osmanabad",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Palghar",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Parbhani",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Pune",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Raigad",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Ratnagiri",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Sangli",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Satara",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Sindhudurg",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Solapur",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Thane",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Wardha",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Washim",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Yavatmal",
+    "state": "IN-MH"
+  },
+  {
+    "name": "Bishnupur",
+    "state": "IN-MN"
+  },
+  {
+    "name": "Chandel",
+    "state": "IN-MN"
+  },
+  {
+    "name": "Churachandpur",
+    "state": "IN-MN"
+  },
+  {
+    "name": "Imphal East",
+    "state": "IN-MN"
+  },
+  {
+    "name": "Imphal West",
+    "state": "IN-MN"
+  },
+  {
+    "name": "Jiribam",
+    "state": "IN-MN"
+  },
+  {
+    "name": "Kakching",
+    "state": "IN-MN"
+  },
+  {
+    "name": "Kamjong",
+    "state": "IN-MN"
+  },
+  {
+    "name": "Kangpokpi",
+    "state": "IN-MN"
+  },
+  {
+    "name": "Noney",
+    "state": "IN-MN"
+  },
+  {
+    "name": "Pherzawl",
+    "state": "IN-MN"
+  },
+  {
+    "name": "Senapati",
+    "state": "IN-MN"
+  },
+  {
+    "name": "Tamenglong",
+    "state": "IN-MN"
+  },
+  {
+    "name": "Tengnoupal",
+    "state": "IN-MN"
+  },
+  {
+    "name": "Thoubal",
+    "state": "IN-MN"
+  },
+  {
+    "name": "Ukhrul",
+    "state": "IN-MN"
+  },
+  {
+    "name": "East Garo Hills",
+    "state": "IN-ML"
+  },
+  {
+    "name": "East Jaintia Hills",
+    "state": "IN-ML"
+  },
+  {
+    "name": "East Khasi Hills",
+    "state": "IN-ML"
+  },
+  {
+    "name": "North Garo Hills",
+    "state": "IN-ML"
+  },
+  {
+    "name": "Ri Bhoi",
+    "state": "IN-ML"
+  },
+  {
+    "name": "South Garo Hills",
+    "state": "IN-ML"
+  },
+  {
+    "name": "South West Garo Hills",
+    "state": "IN-ML"
+  },
+  {
+    "name": "South West Khasi Hills",
+    "state": "IN-ML"
+  },
+  {
+    "name": "West Garo Hills",
+    "state": "IN-ML"
+  },
+  {
+    "name": "West Jaintia Hills",
+    "state": "IN-ML"
+  },
+  {
+    "name": "West Khasi Hills",
+    "state": "IN-ML"
+  },
+  {
+    "name": "Aizawl",
+    "state": "IN-MZ"
+  },
+  {
+    "name": "Champhai",
+    "state": "IN-MZ"
+  },
+  {
+    "name": "Kolasib",
+    "state": "IN-MZ"
+  },
+  {
+    "name": "Lawngtlai",
+    "state": "IN-MZ"
+  },
+  {
+    "name": "Lunglei",
+    "state": "IN-MZ"
+  },
+  {
+    "name": "Mamit",
+    "state": "IN-MZ"
+  },
+  {
+    "name": "Saiha",
+    "state": "IN-MZ"
+  },
+  {
+    "name": "Serchhip",
+    "state": "IN-MZ"
+  },
+  {
+    "name": "Dimapur",
+    "state": "IN-NL"
+  },
+  {
+    "name": "Kiphire",
+    "state": "IN-NL"
+  },
+  {
+    "name": "Kohima",
+    "state": "IN-NL"
+  },
+  {
+    "name": "Longleng",
+    "state": "IN-NL"
+  },
+  {
+    "name": "Mokokchung",
+    "state": "IN-NL"
+  },
+  {
+    "name": "Mon",
+    "state": "IN-NL"
+  },
+  {
+    "name": "Peren",
+    "state": "IN-NL"
+  },
+  {
+    "name": "Phek",
+    "state": "IN-NL"
+  },
+  {
+    "name": "Tuensang",
+    "state": "IN-NL"
+  },
+  {
+    "name": "Wokha",
+    "state": "IN-NL"
+  },
+  {
+    "name": "Zunheboto",
+    "state": "IN-NL"
+  },
+  {
+    "name": "Angul",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Balangir",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Balasore",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Bargarh",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Bhadrak",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Boudh",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Cuttack",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Deogarh",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Dhenkanal",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Gajapati",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Ganjam",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Jagatsinghapur",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Jajpur",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Jharsuguda",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Kalahandi",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Kandhamal",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Kendrapara",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Kendujhar (Keonjhar)",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Khordha",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Koraput",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Malkangiri",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Mayurbhanj",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Nabarangpur",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Nayagarh",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Nuapada",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Puri",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Rayagada",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Sambalpur",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Sonepur",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Sundargarh",
+    "state": "IN-OR"
+  },
+  {
+    "name": "Karaikal",
+    "state": "IN-PY"
+  },
+  {
+    "name": "Mahe",
+    "state": "IN-PY"
+  },
+  {
+    "name": "Pondicherry",
+    "state": "IN-PY"
+  },
+  {
+    "name": "Yanam",
+    "state": "IN-PY"
+  },
+  {
+    "name": "Amritsar",
+    "state": "IN-PB"
+  },
+  {
+    "name": "Barnala",
+    "state": "IN-PB"
+  },
+  {
+    "name": "Bathinda",
+    "state": "IN-PB"
+  },
+  {
+    "name": "Faridkot",
+    "state": "IN-PB"
+  },
+  {
+    "name": "Fatehgarh Sahib",
+    "state": "IN-PB"
+  },
+  {
+    "name": "Fazilka",
+    "state": "IN-PB"
+  },
+  {
+    "name": "Ferozepur",
+    "state": "IN-PB"
+  },
+  {
+    "name": "Gurdaspur",
+    "state": "IN-PB"
+  },
+  {
+    "name": "Hoshiarpur",
+    "state": "IN-PB"
+  },
+  {
+    "name": "Jalandhar",
+    "state": "IN-PB"
+  },
+  {
+    "name": "Kapurthala",
+    "state": "IN-PB"
+  },
+  {
+    "name": "Ludhiana",
+    "state": "IN-PB"
+  },
+  {
+    "name": "Mansa",
+    "state": "IN-PB"
+  },
+  {
+    "name": "Moga",
+    "state": "IN-PB"
+  },
+  {
+    "name": "Muktsar",
+    "state": "IN-PB"
+  },
+  {
+    "name": "Nawanshahr (Shahid Bhagat Singh Nagar)",
+    "state": "IN-PB"
+  },
+  {
+    "name": "Pathankot",
+    "state": "IN-PB"
+  },
+  {
+    "name": "Patiala",
+    "state": "IN-PB"
+  },
+  {
+    "name": "Rupnagar",
+    "state": "IN-PB"
+  },
+  {
+    "name": "Sahibzada Ajit Singh Nagar (Mohali)",
+    "state": "IN-PB"
+  },
+  {
+    "name": "Sangrur",
+    "state": "IN-PB"
+  },
+  {
+    "name": "Tarn Taran",
+    "state": "IN-PB"
+  },
+  {
+    "name": "Ajmer",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Alwar",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Banswara",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Baran",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Barmer",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Bharatpur",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Bhilwara",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Bikaner",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Bundi",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Chittorgarh",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Churu",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Dausa",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Dholpur",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Dungarpur",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Hanumangarh",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Jaipur",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Jaisalmer",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Jalore",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Jhalawar",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Jhunjhunu",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Jodhpur",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Karauli",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Kota",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Nagaur",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Pali",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Pratapgarh",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Rajsamand",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Sawai Madhopur",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Sikar",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Sirohi",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Sri Ganganagar",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Tonk",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "Udaipur",
+    "state": "IN-RJ"
+  },
+  {
+    "name": "East Sikkim",
+    "state": "IN-SK"
+  },
+  {
+    "name": "North Sikkim",
+    "state": "IN-SK"
+  },
+  {
+    "name": "South Sikkim",
+    "state": "IN-SK"
+  },
+  {
+    "name": "West Sikkim",
+    "state": "IN-SK"
+  },
+  {
+    "name": "Ariyalur",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Chennai",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Coimbatore",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Cuddalore",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Dharmapuri",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Dindigul",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Erode",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Kanchipuram",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Kanyakumari",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Karur",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Krishnagiri",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Madurai",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Nagapattinam",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Namakkal",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Nilgiris",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Perambalur",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Pudukkottai",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Ramanathapuram",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Salem",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Sivaganga",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Thanjavur",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Theni",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Thoothukudi",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Tiruchirappalli",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Tirunelveli",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Tiruppur",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Tiruvallur",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Tiruvannamalai",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Tiruvarur",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Vellore",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Viluppuram",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Virudhunagar",
+    "state": "IN-TN"
+  },
+  {
+    "name": "Adilabad",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Bhadradri Kothagudem",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Hyderabad",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Jagtial",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Jangaon",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Jayashankar Bhoopalpally",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Jogulamba Gadwal",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Kamareddy",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Karimnagar",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Khammam",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Komaram Bheem Asifabad",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Mahabubabad",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Mahabubnagar",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Mancherial",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Medak",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Medchal",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Nagarkurnool",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Nalgonda",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Nirmal",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Nizamabad",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Peddapalli",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Rajanna Sircilla",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Rangareddy",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Sangareddy",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Siddipet",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Suryapet",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Vikarabad",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Wanaparthy",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Warangal (Rural)",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Warangal (Urban)",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Yadadri Bhuvanagiri",
+    "state": "IN-TG"
+  },
+  {
+    "name": "Dhalai",
+    "state": "IN-TR"
+  },
+  {
+    "name": "Gomati",
+    "state": "IN-TR"
+  },
+  {
+    "name": "Khowai",
+    "state": "IN-TR"
+  },
+  {
+    "name": "North Tripura",
+    "state": "IN-TR"
+  },
+  {
+    "name": "Sepahijala",
+    "state": "IN-TR"
+  },
+  {
+    "name": "South Tripura",
+    "state": "IN-TR"
+  },
+  {
+    "name": "Unakoti",
+    "state": "IN-TR"
+  },
+  {
+    "name": "West Tripura",
+    "state": "IN-TR"
+  },
+  {
+    "name": "Almora",
+    "state": "IN-UT"
+  },
+  {
+    "name": "Bageshwar",
+    "state": "IN-UT"
+  },
+  {
+    "name": "Chamoli",
+    "state": "IN-UT"
+  },
+  {
+    "name": "Champawat",
+    "state": "IN-UT"
+  },
+  {
+    "name": "Dehradun",
+    "state": "IN-UT"
+  },
+  {
+    "name": "Haridwar",
+    "state": "IN-UT"
+  },
+  {
+    "name": "Nainital",
+    "state": "IN-UT"
+  },
+  {
+    "name": "Pauri Garhwal",
+    "state": "IN-UT"
+  },
+  {
+    "name": "Pithoragarh",
+    "state": "IN-UT"
+  },
+  {
+    "name": "Rudraprayag",
+    "state": "IN-UT"
+  },
+  {
+    "name": "Tehri Garhwal",
+    "state": "IN-UT"
+  },
+  {
+    "name": "Udham Singh Nagar",
+    "state": "IN-UT"
+  },
+  {
+    "name": "Uttarkashi",
+    "state": "IN-UT"
+  },
+  {
+    "name": "Agra",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Aligarh",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Allahabad",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Ambedkar Nagar",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Amethi",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Amroha",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Auraiya",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Azamgarh",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Baghpat",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Bahraich",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Ballia",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Balrampur",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Banda",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Barabanki",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Bareilly",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Basti",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Bhadohi",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Bijnor",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Budaun",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Bulandshahr",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Chandauli",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Chitrakoot",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Deoria",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Etah",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Etawah",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Faizabad",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Farrukhabad",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Fatehpur",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Firozabad",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Gautam Buddha Nagar",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Ghaziabad",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Ghazipur",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Gonda",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Gorakhpur",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Hamirpur",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Hapur (Panchsheel Nagar)",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Hardoi",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Hathras",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Jalaun",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Jaunpur",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Jhansi",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Kannauj",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Kanpur Dehat",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Kanpur Nagar",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Kanshiram Nagar (Kasganj)",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Kaushambi",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Kushinagar (Padrauna)",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Lakhimpur - Kheri",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Lalitpur",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Lucknow",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Maharajganj",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Mahoba",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Mainpuri",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Mathura",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Mau",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Meerut",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Mirzapur",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Moradabad",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Muzaffarnagar",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Pilibhit",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Pratapgarh",
+    "state": "IN-UP"
+  },
+  {
+    "name": "RaeBareli",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Rampur",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Saharanpur",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Sambhal (Bhim Nagar)",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Sant Kabir Nagar",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Shahjahanpur",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Shamali (Prabuddh Nagar)",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Shravasti",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Siddharth Nagar",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Sitapur",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Sonbhadra",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Sultanpur",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Unnao",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Varanasi",
+    "state": "IN-UP"
+  },
+  {
+    "name": "Alipurduar",
+    "state": "IN-WB"
+  },
+  {
+    "name": "Bankura",
+    "state": "IN-WB"
+  },
+  {
+    "name": "Birbhum",
+    "state": "IN-WB"
+  },
+  {
+    "name": "Burdwan",
+    "state": "IN-WB"
+  },
+  {
+    "name": "Cooch Behar",
+    "state": "IN-WB"
+  },
+  {
+    "name": "Dakshin Dinajpur",
+    "state": "IN-WB"
+  },
+  {
+    "name": "Darjeeling",
+    "state": "IN-WB"
+  },
+  {
+    "name": "Hooghly",
+    "state": "IN-WB"
+  },
+  {
+    "name": "Howrah",
+    "state": "IN-WB"
+  },
+  {
+    "name": "Jalpaiguri",
+    "state": "IN-WB"
+  },
+  {
+    "name": "Kalimpong",
+    "state": "IN-WB"
+  },
+  {
+    "name": "Kolkata",
+    "state": "IN-WB"
+  },
+  {
+    "name": "Malda",
+    "state": "IN-WB"
+  },
+  {
+    "name": "Murshidabad",
+    "state": "IN-WB"
+  },
+  {
+    "name": "Nadia",
+    "state": "IN-WB"
+  },
+  {
+    "name": "North 24 Parganas",
+    "state": "IN-WB"
+  },
+  {
+    "name": "Paschim Medinipur",
+    "state": "IN-WB"
+  },
+  {
+    "name": "Purba Medinipur",
+    "state": "IN-WB"
+  },
+  {
+    "name": "Purulia",
+    "state": "IN-WB"
+  },
+  {
+    "name": "South 24 Parganas",
+    "state": "IN-WB"
+  },
+  {
+    "name": "Uttar Dinajpur",
+    "state": "IN-WB"
+  }
+]

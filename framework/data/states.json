@@ -1,0 +1,150 @@
+[
+  {
+    "name": "Andaman and Nicobar Islands",
+    "slug": "IN-AN"
+  },
+  {
+    "name": "Andhra Pradesh",
+    "slug": "IN-AP"
+  },
+  {
+    "name": "Arunachal Pradesh",
+    "slug": "IN-AR"
+  },
+  {
+    "name": "Assam",
+    "slug": "IN-AS"
+  },
+  {
+    "name": "Bihar",
+    "slug": "IN-BR"
+  },
+  {
+    "name": "Chandigarh",
+    "slug": "IN-CH"
+  },
+  {
+    "name": "Chhattisgarh",
+    "slug": "IN-CT"
+  },
+  {
+    "name": "Dadra and Nagar Haveli",
+    "slug": "IN-DN"
+  },
+  {
+    "name": "Daman and Diu",
+    "slug": "IN-DD"
+  },
+  {
+    "name": "Delhi",
+    "slug": "IN-DL"
+  },
+  {
+    "name": "Goa",
+    "slug": "IN-GA"
+  },
+  {
+    "name": "Gujarat",
+    "slug": "IN-GJ"
+  },
+  {
+    "name": "Haryana",
+    "slug": "IN-HR"
+  },
+  {
+    "name": "Himachal Pradesh",
+    "slug": "IN-HP"
+  },
+  {
+    "name": "Jammu and Kashmir",
+    "slug": "IN-JK"
+  },
+  {
+    "name": "Jharkhand",
+    "slug": "IN-JH"
+  },
+  {
+    "name": "Karnataka",
+    "slug": "IN-KA"
+  },
+  {
+    "name": "Kerala",
+    "slug": "IN-KL"
+  },
+  {
+    "name": "Ladakh",
+    "slug": "IN-LA"
+  },
+  {
+    "name": "Lakshadweep",
+    "slug": "IN-LD"
+  },
+  {
+    "name": "Madhya Pradesh",
+    "slug": "IN-MP"
+  },
+  {
+    "name": "Maharashtra",
+    "slug": "IN-MH"
+  },
+  {
+    "name": "Manipur",
+    "slug": "IN-MN"
+  },
+  {
+    "name": "Meghalaya",
+    "slug": "IN-ML"
+  },
+  {
+    "name": "Mizoram",
+    "slug": "IN-MZ"
+  },
+  {
+    "name": "Nagaland",
+    "slug": "IN-NL"
+  },
+  {
+    "name": "Odisha",
+    "slug": "IN-OR"
+  },
+  {
+    "name": "Puducherry",
+    "slug": "IN-PY"
+  },
+  {
+    "name": "Punjab",
+    "slug": "IN-PB"
+  },
+  {
+    "name": "Rajasthan",
+    "slug": "IN-RJ"
+  },
+  {
+    "name": "Sikkim",
+    "slug": "IN-SK"
+  },
+  {
+    "name": "Tamil Nadu",
+    "slug": "IN-TN"
+  },
+  {
+    "name": "Telangana",
+    "slug": "IN-TG"
+  },
+  {
+    "name": "Tripura",
+    "slug": "IN-TR"
+  },
+  {
+    "name": "Uttarakhand",
+    "slug": "IN-UT"
+  },
+  {
+    "name": "Uttar Pradesh",
+    "slug": "IN-UP"
+  },
+  {
+    "name": "West Bengal",
+    "slug": "IN-WB"
+  }
+]

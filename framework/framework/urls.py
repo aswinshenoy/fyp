@@ -15,3 +15,6 @@ urlpatterns = [
 urlpatterns = [
     path('api/', include(urlpatterns))
 ]
+
+admin.site.site_header = 'Admin Panel - WQI App'
+admin.site.site_title = 'Admin Panel - WQI App'

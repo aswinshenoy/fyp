@@ -1,0 +1,30 @@
+[
+  {
+     "name": "Open Well",
+     "slug": "open-well"
+  },
+  {
+     "name": "Pond",
+     "slug": "pond"
+  },
+  {
+     "name": "Shallow Tube Well",
+     "slug": "shallow-tube-well"
+  },
+  {
+     "name": "Deep Tube Well",
+     "slug": "deep-tube-well"
+  },
+  {
+     "name": "Infiltration Well",
+     "slug": "infiltration-well"
+  },
+  {
+    "name": "Treated Surface Water",
+    "slug": "treated-surface-water"
+  },
+  {
+    "name": "Filter Points",
+    "slug": "filter-points"
+  }
+]

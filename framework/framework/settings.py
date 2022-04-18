@@ -7,20 +7,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 env = Env()
 env.read_env()
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
+try:
+    from psycopg2cffi import compat
+    compat.register()
+except ImportError:
+    pass
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-m8sjv2j&@6jayk#6r6#ux(9ywq%)o#3=-p#440dz!8!)fw0*x7'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+SECRET_KEY = env.str('SECRET_KEY', default='yki%oe0)_!jua45_n^v=kzc9)6q*)^gz!3zz#7lh4j8pkj9jbo')
+DEBUG = env.str('DEBUG', default='True')
 
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['http://localhost/*']
 
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -104,20 +102,12 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/4.0/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
+TIME_ZONE = 'Asia/Kolkata'
 USE_I18N = True
-
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.0/howto/static-files/
 STATIC_URL = '/api/static/'
 STATIC_LOCATION = 'static'
 STATIC_ROOT = 'static'

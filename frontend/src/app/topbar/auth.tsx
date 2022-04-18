@@ -5,7 +5,7 @@ const AuthButtons = () => {
 
     return (
         <div className="auth-buttons">
-            <Button variant="solid" color="warning" className="mr-2">Sign In</Button>
+            <Button link={`/api/admin/`} variant="solid" color="warning" className="mr-2">Sign In</Button>
         </div>
     );
 

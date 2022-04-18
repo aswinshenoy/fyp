@@ -1,35 +1,43 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import APIFetch from "../src/utils/APIFetch";
 import LocationsListingView from "../src/location/listing";
+import AppView from "../src/app";
 
 
-const LocationsPage = () => {
-
-    const [locations, setLocations] = useState();
-
-    const fetchData = () => {
-        APIFetch({
-            query: `{
-              locations{
-                id
-                name
-                wqi{
-                  group
-                  value
-                }
-              }
-            }`,
-        }).then(({ success, data, response }) => {
-            if(success && data?.locations) {
-                setLocations(data.locations)
+export async function getServerSideProps({ query }) {
+    return APIFetch({
+        query: `{
+          locations{
+            id
+            name
+            wqi{
+              group
+              value
             }
-        })
-    };
+          }
+        }`,
+    }).then(({ success, data, response }) => {
+        if(success && data?.locations) {
+            return {
+                props: {
+                    locations: data.locations
+                }
+            }
+        } else {
+            return {
+                props: {
+                    notFound: true
+                }
+            }
+        }
+    })
+}
 
-    useEffect(fetchData, []);
 
-    return locations ? <LocationsListingView locations={locations} /> : <div>Loading</div>;
-
-};
+const LocationsPage = ({ locations }) => (
+    <AppView meta={{ title: 'Locations' }}>
+        <LocationsListingView locations={locations} />
+    </AppView>
+);
 
 export default LocationsPage;

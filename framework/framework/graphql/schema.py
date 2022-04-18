@@ -2,13 +2,13 @@
 import strawberry
 from strawberry.tools import merge_types
 
-from sample.graphql import SampleManagementMutations, SampleManagementQueries
+from sample.graphql import SampleManagementMutations, SampleQueries
 
 Mutations = merge_types('Mutations', (
     SampleManagementMutations,
 ))
 Query = merge_types('Queries', (
-    SampleManagementQueries,
+    SampleQueries,
 ))
 
 

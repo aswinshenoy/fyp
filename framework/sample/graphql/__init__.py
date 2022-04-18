@@ -1,7 +1,7 @@
 from .mutations import SampleManagementMutations
-from .queries import SampleManagementQueries
+from .queries import SampleQueries
 
 __all__ = [
     'SampleManagementMutations',
-    'SampleManagementQueries'
+    'SampleQueries'
 ]

@@ -2,24 +2,12 @@ from datetime import date
 from typing import Optional
 
 import strawberry
-from django.db import transaction
 
-from framework.graphql.types import JSONScalar
-from sample.models import TestSample, Location
+from sample.models import Location
 
 
 @strawberry.type
 class SampleManagementMutations:
-
-    @strawberry.mutation
-    def calcResults(self, info) -> Optional[bool]:
-        from sample.models import TestSample
-        samples = TestSample.objects.all()
-        with transaction.atomic():
-            for s in samples:
-                s.set_wqi()
-                s.save()
-        return True
 
     @strawberry.mutation
     def importCSV(self, info, state: str) -> Optional[bool]:
@@ -73,9 +61,6 @@ class SampleManagementMutations:
             sample.set_wqi()
             samples.append(sample)
         TestSample.objects.bulk_create(samples)
-        locations = Location.objects.all()
-        for l in locations:
-            l.calc_metrics()
         return True
 
 

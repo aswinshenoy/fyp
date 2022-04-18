@@ -6,11 +6,24 @@ import AppView from "../../src/app";
 export async function getServerSideProps({ query }) {
     return APIFetch({
         query: `query ($id: ID!) {
-              location(id: $id) {
-                id
-                name
-                district
-                state
+          location(id: $id) {
+            id
+            name
+            district {
+              id
+              slug
+              name
+            }
+            state {
+              id
+              slug
+              name
+            }
+            stats {
+               wqi {
+                  value
+                  group
+              }
                 contamination {
                   physical {
                     value
@@ -25,36 +38,19 @@ export async function getServerSideProps({ query }) {
                     percent
                   }
                 }
-                avgMetrics {
-                  manganese
-                  iron
-                  nitrate
-                  arsenic
-                  fluoride
-                  chloride
-                  sulphate
-                  copper
-                  tds
-                  ph
-                  hardness
-                  alkalinity
-                  turbidity
-                  ecoil
-                  coliform
-                  wqi {
-                    value
-                    group
+              avg {
+                parameter {
+                  slug
+                  name
+                  group{
+                    slug
                   }
                 }
-                yearlyWqi {
-                  year
-                  wqi {
-                    value
-                    group
-                  }
-                }
+                value
               }
-            }`,
+            }
+          }
+        }`,
         variables: { id: query?.id }
     }).then(({ success, data, response }) => {
         if(success && data?.location) {
@@ -74,8 +70,8 @@ export async function getServerSideProps({ query }) {
 }
 
 const LocationPage = ({ location }) => (
-    <AppView>
-        <LocationPageView location={location} />
+    <AppView meta={{ title: `${location?.name} - Panchayath Water Statistics` }}>
+        {location ? <LocationPageView location={location} /> : <div>Not Found</div>}
     </AppView>
 );
 

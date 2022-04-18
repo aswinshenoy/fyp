@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Chemical Properties",
+    "slug": "chemical"
+  },
+  {
+    "name": "Physical Properties",
+    "slug": "physical"
+  },
+  {
+    "name": "Biological Properties",
+    "slug": "biological"
+  }
+]

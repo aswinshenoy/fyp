@@ -22,9 +22,9 @@ const Topbar = () => {
             <div className="w-1/2 flex items-center justify-end">
                 <div className="w-3/4 flex justify-center px-2">
                     <div className="flex gap-3 text-lg">
-                        <Link href="/rankings" passHref>
+                        <Link href="/calculate-wqi" passHref>
                             <a className="text-white">
-                                Learn More
+                                WQI Calculator
                             </a>
                         </Link>
                         <Link href="/rankings" passHref>
