@@ -12,7 +12,7 @@ import Head from 'next/head';
 
 export default function WebApp({ Component, pageProps }: AppProps) {
 
-  return (
+    return (
       <>
         <Head>
           <meta
@@ -20,6 +20,7 @@ export default function WebApp({ Component, pageProps }: AppProps) {
               content="width=device-width, minimum-scale=1, shrink-to-fit=no, initial-scale=1"
           />
         </Head>
+          {/*// @ts-ignore*/}
         <Component {...pageProps} />
       </>
   );
