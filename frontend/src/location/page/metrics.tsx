@@ -31,6 +31,8 @@ const MetricView = ({ districtID = null, location }) => {
                                                 [(11/14), '#FDDD60'],
                                                 [(14/14), '#FF6E76'],
                                             ] : null}
+                                            minValue={m.parameter.minValue}
+                                            maxValue={m.parameter.maxValue}
                                             biological={m?.parameter?.group?.slug === 'biological'}
                                             chemical={m?.parameter?.group?.slug === 'chemical'}
                                             physical={m?.parameter?.group?.slug === 'physical'}

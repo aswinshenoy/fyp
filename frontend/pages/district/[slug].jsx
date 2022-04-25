@@ -46,6 +46,10 @@ export async function getServerSideProps({ query }) {
                 parameter {
                   slug
                   name
+                  sources
+                  treatments
+                  issues
+                  healthHazards
                   group{
                     slug
                   }

@@ -3,6 +3,7 @@ import { DataTable, PageHeader } from "@traboda/dsr";
 
 import APIFetch from '../../utils/APIFetch';
 import ParameterPageHeader from "./header";
+import ParameterMeta from "./header/meta";
 
 const ParameterPageView = ({ districtID, years, sources, parameter: _parameter }) => {
 
@@ -42,6 +43,10 @@ const ParameterPageView = ({ districtID, years, sources, parameter: _parameter }
                 name
                 slug
                 id
+                sources
+                treatments
+                issues
+                healthHazards
                 locations(level: $level, year: $year, sourceID: $sourceID, districtID: $districtID, stateID: $stateID) {
                     rank
                     location {
@@ -70,8 +75,7 @@ const ParameterPageView = ({ districtID, years, sources, parameter: _parameter }
         });
     }
 
-    useEffect(fetchData, [level, year, sourceID, district, state]);
-
+    useEffect(fetchData, [level, year, sourceID, district, state])
 
     return (
         <div>
@@ -89,6 +93,9 @@ const ParameterPageView = ({ districtID, years, sources, parameter: _parameter }
                 title={parameter?.name}
             />
             <div>
+                <ParameterMeta
+                    {...parameter}
+                />
                 <ParameterPageHeader
                     state={state}
                     setState={setState}

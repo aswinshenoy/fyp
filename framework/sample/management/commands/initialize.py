@@ -80,6 +80,12 @@ class Command(BaseCommand):
                     group=ParameterGroup.objects.get(slug=p['group']) if p['group'] else None,
                     minValue=p['minValue'],
                     maxValue=p['maxValue'],
+                    meta={
+                        "treatments": p['treatments'] if 'treatments' in p else [],
+                        "issues": p['issues'] if 'issues' in p else [],
+                        "sources": p['sources'] if 'sources' in p else [],
+                        "healthHazards": p['healthHazards'] if 'healthHazards' in p else [],
+                    }
                 )
             )
         Parameter.objects.bulk_create(parametersData)

@@ -90,6 +90,9 @@ class Parameter(models.Model):
         on_delete=models.SET_NULL,
         null=True, blank=True
     )
+    meta = models.JSONField(
+        null=True, blank=True
+    )
 
     class Meta:
         db_table = 'parameter'

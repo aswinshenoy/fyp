@@ -95,6 +95,32 @@ const MetricCard = ({ minValue, colors, maxValue, value, unit, parameter, chemic
                 ]
             }}
         />
+        {(value > maxValue) ? (
+            <div>
+                <div className="bg-red-100 p-2 text-center mb-2">
+                    <div className="font-semibold text-red-600 text-lg">Unsuitable</div>
+                    Exceeds the maximum value of {maxValue} {unit != null ? unit : ' ml/L'}
+                </div>
+                <div className="bg-green-100 text-left p-2">
+                        <div className="text-lg font-semibold">Treatments</div>
+                        {(parameter?.treatments && parameter?.treatments?.length > 0) ? (
+                            <ul className="list-decimal text-sm ml-5">
+                                {parameter?.treatments.map((s) => (
+                                    <li>{s}</li>
+                                ))}
+                            </ul>
+                        ) : (
+                            <div>Treatments not found</div>
+                        )}
+                </div>
+            </div>
+        ) : (
+            <div>
+                <div className="font-semibold text-green-600 text-lg mb-2">No Hazards</div>
+                <div><b>Value:</b> {(Math.round((value + Number.EPSILON) * 10000) / 10000)} mg/L</div>
+                <div><b>Max Allowed:</b> {(Math.round((maxValue + Number.EPSILON) * 10000) / 10000)} mg/L</div>
+            </div>
+        )}
         {districtID && (
             <div>
                 <Button link={`/parameter/${parameter?.slug}?districtID=${districtID}`}>

@@ -4,77 +4,200 @@
     "slug": "arsenic",
     "maxValue": 0.01,
     "minValue": 0,
-    "group": "chemical"
+    "group": "chemical",
+    "sources": [
+      "Overuse of chemical fertilizers or herbicides",
+      "Industrial Pollution",
+      "Natural Earth Deposits"
+    ],
+    "treatments": [
+      "Reverse Osmosis",
+      "Ion Exchange",
+      "Ultra-Filtration",
+      "Distillation"
+    ],
+    "ineffectiveTechniques": [
+      "Chlorination",
+      "Boiling Water"
+    ]
   },
   {
     "name": "Chloride",
     "slug": "chloride",
     "maxValue": 250,
     "minValue": 0,
-    "group": "chemical"
+    "group": "chemical",
+    "issues": [
+      "Salty off-Taste",
+      "Damage Appliances",
+      "Inhibit plant growth if used for irrigation"
+    ],
+    "healthHazards": [
+      "Hyperchloremia on high levels of chloride in blood"
+    ],
+    "treatments": [
+      "Activated Carbon Filter",
+      "Chemical Dosing System / Decholrination"
+    ]
   },
   {
     "name": "Copper",
     "slug": "copper",
     "maxValue": 0.05,
     "minValue": 0,
-    "group": "chemical"
+    "group": "chemical",
+    "sources": [
+      "Mining",
+      "Manufacturing & Industries",
+      "Wastewater Releases",
+      "Corrosion of Copper Pipers"
+    ],
+    "issues": [
+      "Discoloured / Blue-green coloured water",
+      "Laundry issues",
+      "Taste issues",
+      "Blue-green staining of fixtures"
+    ],
+    "healthHazards": [
+      "Live Damage",
+      "Kidney Damage",
+      "Gastrointestinal Issues"
+    ],
+    "treatments": [
+      "Reverse Osmosis",
+      "Distillation",
+      "Nano-Filtration Systems",
+      "Ion-Exchange Filters"
+    ],
+    "ineffectiveTechniques": [
+      "Chlorination",
+      "Boiling Water"
+    ]
   },
   {
     "name": "Fluoride",
     "slug": "fluoride",
     "maxValue": 1.0,
     "minValue": 0,
-    "group": "chemical"
+    "group": "chemical",
+    "treatments": [
+      "Reverse Osmosis",
+      "Distillation",
+      "Activated Alumina",
+      "Bone Char (BC) Carbon"
+    ]
   },
   {
     "name": "Iron",
     "slug": "iron",
     "maxValue": 1.0,
     "minValue": 0,
-    "group": "chemical"
+    "group": "chemical",
+    "sources": [
+      "Mining",
+      "Natural Sources",
+      "Rusting & Corrosion"
+    ],
+    "healthHazards": [
+      "Hemochromatosis - Iron Overload Disease",
+      "Fatigue & Weakness",
+      "Darkening of Skin Color"
+    ],
+    "treatments": [
+      "Ultra-Filtration",
+      "Green Sand Filters (GSF)"
+    ]
   },
   {
     "name": "Manganese",
     "slug": "manganese",
     "maxValue": 0.1,
     "minValue": 0,
-    "group": "chemical"
+    "group": "chemical",
+    "treatments": [
+      "Sediment Filters",
+      "Green Sand Filters (GSF)",
+      "Water Softeners"
+    ]
   },
   {
     "name": "Nitrate",
     "slug": "nitrate",
     "maxValue": 45,
     "minValue": 0,
-    "group": "chemical"
+    "group": "chemical",
+    "treatments": [
+      "Reverse Osmosis",
+      "Ion Exchange",
+      "Distillation"
+    ],
+    "ineffectiveTechniques": [
+      "Chlorination",
+      "Boiling Water"
+    ]
   },
   {
     "name": "Sulphate",
     "slug": "sulphate",
     "maxValue": 200,
     "minValue": 0,
-    "group": "chemical"
+    "group": "chemical",
+    "treatments": [
+      "Reverse Osmosis",
+      "Ion Exchange"
+    ]
   },
   {
     "name": "Alkalinity",
     "slug": "alkalinity",
     "maxValue": 200,
-    "minValue": 0,
-    "group": "physical"
+    "minValue": 20,
+    "group": "physical",
+    "issues": [
+      "Chalky / Salty Taste",
+      "Dry Skin",
+      "Chemical Precipitates that clog piping"
+    ]
   },
     {
     "name": "Turbidity",
     "slug": "turbidity",
     "maxValue": 150,
     "minValue": 0,
-    "group": "physical"
+    "group": "physical",
+    "issues": [
+      "Dirty Water",
+      "Damage fixtures, appliances & piping",
+      "Difficulty treating water for other contaminants"
+    ],
+    "healthHazards": [
+      "Can provide medium for microbial growth",
+      "Interfere with disinfection & water treatment processes"
+    ],
+    "treatments": [
+      "Sand Filtration",
+      "Cloth Filtration",
+      "Settling & Decanting",
+      "Moringa Flocculation",
+      "Alum Flocculation",
+      "Whole-House Particle Filter"
+    ]
   },
   {
     "name": "Acidity (PH)",
     "slug": "ph",
     "maxValue": 6.5,
     "minValue": 8.5,
-    "group": "physical"
+    "group": "physical",
+    "issues": [
+      "Low PH could leach metal ions from aquifiers, plumbing fixtures & piping",
+      "High PH brings alkali taste, and bitterness",
+      "High PH forms deposits on utensils, more dificult to get soaps and detergents to foam",
+      "High PH can decrease efficiency of boilers and heaters"
+    ],
+    "treatments": [
+      "Reverse Osmosis"
+    ]
   },
   {
     "name": "Hardness",
@@ -88,21 +211,53 @@
     "slug": "tds",
     "maxValue": 200,
     "minValue": 0,
-    "group": "physical"
+    "group": "physical",
+    "healthHazard": false,
+    "sources": [
+      "Urban Runoff",
+      "Industrial Wastewater",
+      "Sewage",
+      "Natural Sources"
+    ],
+    "treatments": [
+      "Reverse Osmosis",
+      "Water Softeners"
+    ],
+    "ineffectiveTechniques": [
+      "Boiling Water"
+    ]
   },
   {
     "name": "E.Coli",
     "slug": "ecoli",
     "maxValue": 100,
     "minValue": 0,
-    "group": "biological"
+    "group": "biological",
+    "sources": [
+      "Sewage overflows, untreated sewage",
+      "Agricultural & Storm Water Runoffs"
+    ],
+    "treatments": [
+      "Boiling of Water",
+      "Chlorination",
+      "Ultraviolet Light (UV)"
+    ]
   },
   {
     "name": "Coliform",
     "slug": "coliform",
     "maxValue": 100,
     "minValue": 0,
-    "group": "biological"
+    "group": "biological",
+    "sources": [
+      "Sewage overflows, untreated sewage",
+      "Agricultural & Storm Water Runoffs"
+    ],
+    "treatments": [
+      "Boiling of Water",
+      "Chlorination",
+      "Ultraviolet Light (UV)"
+    ]
   },
   {
     "name": "Water Quality Index (WQI)",

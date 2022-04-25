@@ -16,6 +16,10 @@ export async function getServerSideProps({ params, query }) {
             name
             slug
             id
+            sources
+            treatments
+            issues
+            healthHazards
             locations(districtID: $districtID) {
                 rank
                 location {

@@ -20,6 +20,26 @@ class BasicParameterType:
     minValue: float
     group: Optional[BasicParameterGroupType]
 
+    @strawberry.field
+    def treatments(self, info) -> List[str]:
+        if self.meta and 'treatments' in self.meta:
+            return self.meta['treatments']
+
+    @strawberry.field
+    def sources(self, info) -> List[str]:
+        if self.meta and 'sources' in self.meta:
+            return self.meta['sources']
+
+    @strawberry.field
+    def issues(self, info) -> List[str]:
+        if self.meta and 'issues' in self.meta:
+            return self.meta['issues']
+
+    @strawberry.field
+    def healthHazards(self, info) -> List[str]:
+        if self.meta and 'healthHazards' in self.meta:
+            return self.meta['healthHazards']
+
 
 @strawberry.type
 class ParameterType(BasicParameterType):
